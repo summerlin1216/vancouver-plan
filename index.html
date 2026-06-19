@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出去玩最開心</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blk:#111;--wht:#fff;--cream:#F9F6F0;--gray:#F0F0F0;--mid:#CCC;--drk:#555;
+  --serif:"Playfair Display",serif;--sans:"Inter","Helvetica Neue",sans-serif
+}
+body{font-family:var(--sans);background:var(--wht);color:var(--blk);max-width:700px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--blk);padding:14px 0;margin:0 -20px;padding-left:20px;padding-right:20px}
+.brand{font-family:var(--serif);font-size:1.4rem;font-weight:900;letter-spacing:.08em;margin-bottom:10px}
+.tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:6px 12px;font-size:.65rem;letter-spacing:.1em;font-weight:600;font-family:var(--sans);border:1px solid var(--mid);background:none;cursor:pointer;color:var(--drk);border-radius:20px}
+.tab.active{color:#fff;background:var(--blk);border-color:var(--blk)}
+.cnt-row{font-size:.65rem;color:var(--drk);margin-top:8px;letter-spacing:.05em}
+.cnt-row strong{color:var(--blk)}
+.filterbar{padding:12px 0;border-bottom:1px solid var(--gray);margin-bottom:16px}
+.fg{margin-bottom:8px}
+.fl{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--drk);font-weight:600;display:block;margin-bottom:5px}
+.chiprow{display:flex;gap:5px;flex-wrap:wrap}
+.chip{padding:5px 11px;font-size:.62rem;letter-spacing:.05em;font-weight:500;font-family:var(--sans);border:1px solid var(--mid);background:#fff;cursor:pointer;color:var(--drk);border-radius:14px}
+.chip.active{background:var(--blk);color:#fff;border-color:var(--blk)}
+.cards{display:flex;flex-direction:column;gap:0}
+.card{border-bottom:1px solid var(--gray);padding:18px 0}
+.card.hidden{display:none}
+.ci{width:100%;aspect-ratio:16/10;overflow:hidden;background:var(--cream);border-radius:6px;position:relative;margin-bottom:12px;display:flex;align-items:center;justify-content:center}
+.ci img{width:100%;height:100%;object-fit:cover;display:block}
+.ci-ph{font-size:2.2rem;color:var(--mid)}
+.bdg{position:absolute;top:8px;left:8px;background:#fff;font-size:.55rem;letter-spacing:.08em;padding:3px 8px;font-weight:700;border-radius:3px}
+.tbdg{position:absolute;top:8px;right:8px;background:var(--blk);color:#fff;font-size:.55rem;padding:3px 8px;font-weight:600;border-radius:3px}
+.cm{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.cr{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--drk)}
+.cs{font-size:.58rem;color:var(--mid);margin-left:auto}
+.ct{font-family:var(--serif);font-size:1.15rem;font-weight:700;line-height:1.3;margin-bottom:8px}
+.mi{margin-bottom:6px}
+.mt{font-size:.58rem;letter-spacing:.08em;padding:3px 8px;background:var(--blk);color:#fff;font-weight:600;border-radius:3px;display:inline-block}
+.pr{font-size:.75rem;font-weight:600;margin-bottom:8px}
+.cd{font-size:.85rem;line-height:1.75;color:var(--drk);font-weight:300;margin-bottom:12px}
+.cf{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:.55rem;letter-spacing:.05em;padding:3px 8px;border:1px solid var(--mid);color:var(--drk);border-radius:10px}
+.lks{display:flex;gap:14px;align-items:center}
+.ml{font-size:.68rem;font-weight:600;color:#1a73e8;text-decoration:none}
+.cl{font-size:.68rem;font-weight:700;color:var(--blk);text-decoration:none}
+.empty{text-align:center;padding:60px 20px}
+.empty-t{font-family:var(--serif);font-size:1.3rem;font-style:italic;color:var(--mid);margin-bottom:8px}
+.empty-s{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)}
+.src-note{font-size:.55rem;color:var(--mid);margin-top:6px;line-height:1.5}
+footer{border-top:1px solid var(--blk);padding:24px 0;margin-top:20px;text-align:center}
+.fb{font-family:var(--serif);font-size:1rem;font-weight:900;letter-spacing:.1em;margin-bottom:6px}
+.fn{font-size:.55rem;letter-spacing:.08em;color:var(--mid)}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">出去玩最開心</div>
+  <div class="tabs">
+    <button class="tab active" data-mode="all">全部</button>
+    <button class="tab" data-mode="weeknight">平日晚上 🌇</button>
+    <button class="tab" data-mode="weekend">假日 🏔</button>
+  </div>
+  <div class="cnt-row">共 <strong id="cnt">0</strong> 個行程</div>
+</header>
+
+<div class="filterbar">
+  <div class="fg">
+    <span class="fl">地區</span>
+    <div class="chiprow">
+      <button class="chip active" data-f="region" data-v="all">全部</button>
+      <button class="chip" data-f="region" data-v="Downtown">市中心</button>
+      <button class="chip" data-f="region" data-v="Burnaby">本拿比</button>
+      <button class="chip" data-f="region" data-v="Richmond">列治文</button>
+      <button class="chip" data-f="region" data-v="North Van">北溫</button>
+      <button class="chip" data-f="region" data-v="Others">其他</button>
+    </div>
+  </div>
+  <div class="fg">
+    <span class="fl">類型</span>
+    <div class="chiprow">
+      <button class="chip active" data-f="cat" data-v="all">全部</button>
+      <button class="chip" data-f="cat" data-v="Hiking">Hiking</button>
+      <button class="chip" data-f="cat" data-v="逛街">逛街</button>
+      <button class="chip" data-f="cat" data-v="音樂">音樂</button>
+      <button class="chip" data-f="cat" data-v="美食">美食</button>
+    </div>
+  </div>
+  <div class="fg">
+    <span class="fl">交通</span>
+    <div class="chiprow">
+      <button class="chip active" data-f="transit" data-v="all">全部</button>
+      <button class="chip" data-f="transit" data-v="大眾運輸">大眾運輸</button>
+      <button class="chip" data-f="transit" data-v="建議開車">建議開車</button>
+    </div>
+  </div>
+  <div class="fg">
+    <span class="fl">天氣</span>
+    <div class="chiprow">
+      <button class="chip active" data-f="weather" data-v="all">全部</button>
+      <button class="chip" data-f="weather" data-v="室內">室內</button>
+      <button class="chip" data-f="weather" data-v="戶外">戶外</button>
+    </div>
+  </div>
+</div>
+
+<div class="cards" id="cards"></div>
+
+<footer>
+  <div class="fb">出去玩最開心</div>
+  <div class="fn">圖片來源：Wikimedia Commons ｜ 資訊來源：604 Now · Daily Hive · Songkick · Fortune Sound Club</div>
+</footer>
+
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+
+  // Wikimedia Special:FilePath 會自動重新導向到正確的雜湊路徑，不需要手動計算 MD5
+  function wm(filename) {
+    return "https://commons.wikimedia.org/wiki/Special:FilePath/" + encodeURIComponent(filename);
+  }
+
+  var DATA = [
+
+  /* ===== 平日晚上 ===== */
+  {T:"Deep Cove 黃昏散步",M:"weeknight",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+   D:"北溫峽灣小村，傍晚時分碼頭與山色相映。Honey's Doughnuts是必訪的甜點站，沿岸散步約一小時即可走完全程，適合下班後的小旅行。",
+   Dt:"平日任意日",S:"604 Now",L:"https://do604.com",Map:"Deep Cove, North Vancouver, British Columbia, Canada",
+   I:wm("Lonsdale Ave North Vancouver BC.JPG")},
+
+  {T:"Burrard Bridge 黃昏散步",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"傍晚五點後從Granville步行到Kitsilano，橋上欣賞夕陽沉入海平面，Burrard Inlet漁船與北岸山脈剪影是溫哥華最美的日常風景，全程約1小時。",
+   Dt:"平日任意日",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"Burrard Bridge, Vancouver, British Columbia, Canada",
+   I:wm("Burrard Bridge, Vancouver (2012) - 1.JPG")},
+
+  {T:"Capilano River 溪谷步道",M:"weeknight",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+   D:"沿河谷行走的低難度步道，全程幾乎平坦。林間鳥鳴加溪流聲音療癒感極強，日落前一小時出發可欣賞最後的金色光線，來回約2小時。",
+   Dt:"平日任意日",S:"604 Now",L:"https://do604.com",Map:"Capilano River Regional Park, North Vancouver, British Columbia, Canada",
+   I:wm("Capilano suspension bridge -a.jpg")},
+
+  {T:"Stanley Park 黃昏跑步",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"Stanley Park內沿海徑跑到Brockton Point燈塔，夜幕低垂時港口燈光與北溫住宅區的燈火相映成趣。單程約3km，全程平坦無障礙。",
+   Dt:"平日任意日",S:"Tourism Vancouver",L:"https://stanleypark.com",Map:"Stanley Park, Vancouver, British Columbia, Canada",
+   I:wm("Stanley Park totem poles, Vancouver (2013) - 1.JPG")},
+
+  {T:"Granville Island 傍晚市集",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   D:"Public Market傍晚人潮稍退，是本地居民最愛的購物時段。手工起司、現烤麵包、本地精釀，邊吃邊看海灣景色，完美的平日小確幸，建議5點後前往。",
+   Dt:"平日至7pm",S:"Tourism Vancouver",L:"https://granvilleisland.com",Map:"Granville Island Public Market, 1669 Johnston Street, Vancouver, British Columbia, Canada",
+   I:wm("Granville Island (118200909).jpg")},
+
+  {T:"Lonsdale Quay 碼頭夜間散步",M:"weeknight",C:"逛街",R:"North Van",Tr:"大眾運輸",W:"戶外",
+   D:"Seabus到達後即是Lonsdale Quay Market，碼頭旁的現場音樂、手工冰淇淋與港口燈火，是平日最輕鬆的小出遊。週五夜市開放至晚上10點。",
+   Dt:"週五夜市3-10pm",S:"604 Now",L:"https://do604.com",Map:"Lonsdale Quay Market, 123 Carrie Cates Court, North Vancouver, British Columbia, Canada",
+   I:wm("Lonsdale Ave North Vancouver BC.JPG")},
+
+  {T:"Commercial Drive 街區散步",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"Commercial Drive沿線密集獨立咖啡廳與異國餐廳，平日人流適中，最適合步行探索溫哥華最有個性的文化街道，有許多歇腳的小店。",
+   Dt:"平日任意日",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"Commercial Drive, Vancouver, British Columbia, Canada",
+   I:wm("Commercial Drive (8110991970).jpg")},
+
+  {T:"Vancouver Lookout 觀景台夜景",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   D:"市中心最經典的觀景塔，黃昏時城市慢慢亮燈，從玻璃外牆俯瞰整個大溫。Waterfront站步行3分鐘，建議傍晚6點左右前往欣賞日落與入夜過渡。",
+   Dt:"平日9am-9pm",S:"Tourism Vancouver",L:"https://vancouverlookout.com",Map:"Vancouver Lookout, 555 West Hastings Street, Vancouver, British Columbia, Canada",
+   I:wm("Downtown from Port Vancouver - panoramio.jpg")},
+
+  {T:"Yaletown / False Creek 黃昏慢跑",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"從Yaletown-Roundhouse站出發，沿False Creek跑到Granville Island，傍晚夕陽把海面染成玫瑰金。約5km全平坦，適合各程度跑者與散步者。",
+   Dt:"平日任意日",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"Yaletown, Vancouver, British Columbia, Canada",
+   I:wm("False Creek Vancouver British Columbia Canada 02.jpg")},
+
+  {T:"Queen Elizabeth Park 半山夕陽",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"全溫哥華海拔最高的公園，花圃四季有景。傍晚金色光線灑在玫瑰園，遠眺北岸山脈倒影如畫，來回約1.5小時，人少且療癒。",
+   Dt:"平日任意日",S:"Tourism Vancouver",L:"https://vancouver.ca/parks",Map:"Queen Elizabeth Park, 4600 Cambie Street, Vancouver, British Columbia, Canada",
+   I:wm("Bloedel Floral Conservatory, Queen Elizabeth Park - Vancouver, Canada - DSC07563.JPG")},
+
+  {T:"Chinatown 街區夜遊",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"中國城街區霓虹招牌與百年建築並存，平日夜晚燈火別有風情，可順道走訪孫中山古典中式庭園周邊街區，輕鬆悠閒。",
+   Dt:"平日任意日",S:"604 Now",L:"https://vancouverchinatown.ca",Map:"Chinatown, Vancouver, British Columbia, Canada",
+   I:wm("Vancouver's Chinatown at night. (15234326238).jpg")},
+
+  {T:"New Westminster Quay 河濱步道",M:"weeknight",C:"Hiking",R:"Others",Tr:"大眾運輸",W:"戶外",
+   D:"沿Fraser River的木棧道行走，平靜水面映著橙紅夕陽。New Westminster站出站步行5分鐘即達，全線平坦，帶狗散步的好去處。",
+   Dt:"平日任意日",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"New Westminster Quay, New Westminster, British Columbia, Canada",
+   I:wm("Westminster Pier Park 2015-06-27.jpg")},
+
+  {T:"Mount Seymour 平日眺望",M:"weeknight",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+   D:"北溫三大山之一，平日車流少，山腰停車場即可俯瞰整個Burrard Inlet。傍晚時分雲層常在腳下流動，是城市與荒野交界的奇妙體驗。",
+   Dt:"平日任意日",S:"604 Now",L:"https://do604.com",Map:"Mount Seymour Provincial Park, North Vancouver, British Columbia, Canada",
+   I:wm("Mount Seymour Provincial Park, BC (DSCF8496).jpg")},
+
+  {T:"Pacific Spirit Park 城市森林漫步",M:"weeknight",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"UBC旁的城市森林，超過50km步道網絡，平日人少靜謐。任選一條短環形路線輕鬆完成平日的自然補給，樹冠茂密即使下雨也適合。",
+   Dt:"平日任意日",S:"Tourism Vancouver",L:"https://vancouver.ca/parks",Map:"Pacific Spirit Regional Park, Vancouver, British Columbia, Canada",
+   I:wm("Capilano suspension bridge -a.jpg")},
+
+  {T:"Bowen Island 渡輪傍晚",M:"weeknight",C:"逛街",R:"Others",Tr:"大眾運輸",W:"戶外",
+   D:"從Horseshoe Bay搭乘20分鐘渡輪，傍晚抵達後在Snug Cove的Artisan Square散步喝一杯，趁末班船前回程，體驗感比想像中更悠閒。",
+   Dt:"平日任意日（依渡輪班次）",S:"Daily Hive",L:"https://www.bcferries.com",Map:"Snug Cove, Bowen Island, British Columbia, Canada",
+   I:wm("Bowen Island from Murrays Beach.jpg")},
+
+  {T:"Spanish Banks 夕陽野餐",M:"weeknight",C:"Hiking",R:"Others",Tr:"大眾運輸",W:"戶外",
+   D:"UBC旁海灘平日人少，退潮時沙灘綿延數百米。帶一張野餐墊坐看夕陽沉入海峽，遠方北岸山脈輪廓清晰可見，是溫哥華最不擁擠的夕陽點。",
+   Dt:"平日任意日",S:"604 Now",L:"https://do604.com",Map:"Spanish Banks, Vancouver, British Columbia, Canada",
+   I:wm("Jericho Beach 2011-10-27-001.jpg")},
+
+  {T:"Harbour Green Park 海港夜景",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"Coal Harbour旁的小型公園，正對Canada Place與北岸山脈。平日傍晚遊客稀少，是欣賞海港燈火與水上飛機起降的私房景點。",
+   Dt:"平日任意日",S:"Tourism Vancouver",L:"https://vancouver.ca/parks",Map:"Harbour Green Park, Vancouver, British Columbia, Canada",
+   I:wm("Coal Harbour Community Centre, Vancouver (2012).JPG")},
+
+  {T:"Stawamus Chief 平日輕量挑戰",M:"weeknight",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"若下班時間夠早，First Peak來回約2.5小時可完成，平日車流順暢、停車容易，山頂俯瞰Squamish海灣與Howe Sound峽灣的景色值回車程。",
+   Dt:"5月-9月平日傍晚",S:"604 Now",L:"https://do604.com",Map:"Stawamus Chief Provincial Park, Squamish, British Columbia, Canada",
+   I:wm("Hiking The Chief in Squamish 13-1010 - 17.jpg")},
+
+  {T:"Lighthouse Park 夕陽燈塔",M:"weeknight",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"West Vancouver的百年老樹燈塔公園，環形步道約4km，懸崖上俯瞰Howe Sound峽灣，平日傍晚幾乎沒有遊客，是西區的私藏夕陽點。",
+   Dt:"平日任意日",S:"604 Now",L:"https://do604.com",Map:"Lighthouse Park, West Vancouver, British Columbia, Canada",
+   I:wm("The Point Atkinson Light.JPG")},
+
+  {T:"Olympic Village 濕地公園",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"False Creek旁的低調城市濕地公園，設有鳥類保護區與觀景台，傍晚光線最美。沿木棧道慢走，遠眺山景水色，幾乎沒有觀光客的城市秘境。",
+   Dt:"平日任意日",S:"Tourism Vancouver",L:"https://vancouver.ca/parks",Map:"Hinge Park, Vancouver, British Columbia, Canada",
+   I:wm("False Creek Vancouver British Columbia Canada 02.jpg")},
+
+  /* ===== 假日 ===== */
+  {T:"Grouse Mountain 纜車登頂",M:"weekend",C:"Hiking",R:"North Van",Tr:"大眾運輸",W:"戶外",
+   D:"溫哥華最具代表性的山頂體驗。搭乘空中纜車俯瞰整座城市與海灣，頂部有救援熊、觀景台與餐廳，有體力者可挑戰Grouse Grind步道。2026年5月新開幕Grouse Gravity Coaster重力雲霄飛車，全長1434米、時速可達45km/h，單人$29、雙人$41（不含上山纜車票）。",
+   Dt:"全年開放，Coaster為夏季限定",S:"604 Now / Daily Hive",L:"https://www.grousemountain.com",Map:"Grouse Mountain, 6400 Nancy Greene Way, North Vancouver, British Columbia, Canada",
+   I:wm("Atop Grouse Mountain in Vancouver BC - (18726704358).jpg")},
+
+  {T:"Steveston Village 漁村老街",M:"weekend",C:"逛街",R:"Richmond",Tr:"建議開車",W:"戶外",
+   D:"列治文最美歷史漁村，百年木造倉庫、現撈海鮮、手工冰淇淋。Gulf of Georgia Cannery是必去歷史博物館，碼頭旁吃魚薯條是每次必做的儀式。",
+   Dt:"全年",S:"Daily Hive",L:"https://www.richmond.ca/steveston",Map:"Steveston Village, Richmond, British Columbia, Canada",
+   I:wm("Statues in front of the Cannery (6865002524).jpg")},
+
+  {T:"Garibaldi Provincial Park 高山健行",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"溫哥華日歸健行的天花板體驗。Panorama Ridge或Black Tusk路線，翡翠湖倒映雪山，是BC省最壯觀的景色之一，建議平日前往避開人潮。",
+   Dt:"6月-10月",S:"604 Now",L:"https://do604.com",Map:"Garibaldi Provincial Park, British Columbia, Canada",
+   I:wm("Atop the Black Tusk in Garibaldi Park.jpg")},
+
+  {T:"Granville Island 全日探索",M:"weekend",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   D:"溫哥華最有生命力的創意聚落。Public Market早上採買，下午逛手工藝品店與畫廊，傍晚在海邊喝一杯本地精釀。假日整天都不夠用。",
+   Dt:"全年",S:"Tourism Vancouver",L:"https://granvilleisland.com",Map:"Granville Island, Vancouver, British Columbia, Canada",
+   I:wm("Granville Island (118200909).jpg")},
+
+  {T:"Capilano Suspension Bridge 吊橋公園",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+   D:"北溫經典吊橋公園，137米長吊橋橫跨峽谷，搭配Treetops Adventure樹冠步道與Cliffwalk懸崖步道，假日適合花一個下午慢慢逛。",
+   Dt:"全年",S:"604 Now",L:"https://www.capbridge.com",Map:"Capilano Suspension Bridge Park, North Vancouver, British Columbia, Canada",
+   I:wm("Capilano suspension bridge -a.jpg")},
+
+  {T:"Fort Langley 歷史小鎮一日遊",M:"weekend",C:"逛街",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"BC省誕生地的歷史小鎮。國家歷史遺址、古董店、手工果醬小店、精釀酒吧一字排開。沿Fraser River老街道漫步，節奏完全不同於城市。",
+   Dt:"全年",S:"Daily Hive",L:"https://www.pc.gc.ca/fortlangley",Map:"Fort Langley National Historic Site, Fort Langley, British Columbia, Canada",
+   I:wm("Fort Langley Community Hall.jpg")},
+
+  {T:"Deep Cove 獨木舟全日",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+   D:"峽灣最美的獨木舟體驗。租一艘划向Indian Arm，途經靜謐峽灣與野生海豹棲息地。假日人氣旺，建議上午九點前抵達，回程到Honey's Doughnuts是儀式。",
+   Dt:"5月-10月",S:"Tourism Vancouver",L:"https://deepcovekayak.com",Map:"Deep Cove, North Vancouver, British Columbia, Canada",
+   I:wm("Lonsdale Ave North Vancouver BC.JPG")},
+
+  {T:"Stanley Park 環園一日",M:"weekend",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"溫哥華城市公園的王者。環園Seawall全長10km，途經Prospect Point、Third Beach、Totem Poles。假日租腳踏車騎一圈是最完美的溫哥華體驗。",
+   Dt:"全年",S:"604 Now",L:"https://stanleypark.com",Map:"Stanley Park, Vancouver, British Columbia, Canada",
+   I:wm("Stanley Park totem poles, Vancouver (2013) - 1.JPG")},
+
+  {T:"Sunshine Coast / Gibsons 渡輪小旅行",M:"weekend",C:"逛街",R:"Others",Tr:"大眾運輸",W:"戶外",
+   D:"從Horseshoe Bay搭渡輪40分鐘到Gibsons，溫哥華人最愛的假日逃跑路線。海岸小鎮、藝廊、海鮮市場，費用低廉卻有出國般的抽離感。",
+   Dt:"全年（渡輪每日營運）",S:"Daily Hive",L:"https://www.bcferries.com",Map:"Gibsons, British Columbia, Canada",
+   I:wm("View of Gibsons from Mt. Elphinstone.jpg")},
+
+  {T:"Bowen Island 島嶼半日逃離",M:"weekend",C:"逛街",R:"Others",Tr:"大眾運輸",W:"戶外",
+   D:"從Horseshoe Bay渡輪僅20分鐘，溫哥華附近最美的小島。Artisan Square的獨立書店、本地起司、熏魚。走上Crest Trail俯瞰Georgia海峽。",
+   Dt:"全年",S:"Daily Hive",L:"https://www.bcferries.com",Map:"Bowen Island, British Columbia, Canada",
+   I:wm("Bowen Island from Murrays Beach.jpg")},
+
+  {T:"Squamish Chief 花崗岩岩壁登頂",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"北美最大花崗岩岩壁之一，三個山頂各有不同難度。攻頂後俯瞰Squamish海灣與Howe Sound峽灣。Sea-to-Sky Highway沿途風景本身就是目的地。",
+   Dt:"5月-10月",S:"604 Now",L:"https://do604.com",Map:"Stawamus Chief Provincial Park, Squamish, British Columbia, Canada",
+   I:wm("Hiking The Chief in Squamish 13-1010 - 17.jpg")},
+
+  {T:"Richmond Night Market",M:"weekend",C:"逛街",R:"Richmond",Tr:"大眾運輸",W:"戶外",
+   D:"加拿大最大夜市，亞洲街頭美食、遊戲攤位、現場表演。每年5月至10月週末夜間開放，從Bridgeport站步行可達，親子同遊或閨蜜夜出都非常適合。",
+   Dt:"週末 7pm-12am（5月-10月）",S:"Tourism Vancouver",L:"https://richmondnightmarket.com",Map:"Richmond Night Market, 8351 River Road, Richmond, British Columbia, Canada",
+   I:wm("Grilling rice balls by Uncleweed in Vancouver.jpg")},
+
+  {T:"Jericho Beach 夏日海灘",M:"weekend",C:"Hiking",R:"Others",Tr:"大眾運輸",W:"戶外",
+   D:"夏日溫哥華人的海灘聚集地。淺灘適合家庭游泳，沙灘排球場、BBQ架、風帆課程。落日時分整條海岸變成粉橙色，是溫哥華最好的免費夏日體驗。",
+   Dt:"夏季最佳",S:"604 Now",L:"https://do604.com",Map:"Jericho Beach Park, Vancouver, British Columbia, Canada",
+   I:wm("Jericho Beach 2011-10-27-001.jpg")},
+
+  {T:"Harrison Hot Springs 溫泉小鎮",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"室內",
+   D:"距溫哥華約1.5小時的百年溫泉度假地。Harrison Lake是BC省最大湖泊之一，湖邊露天溫泉、沙雕公園，適合雨天或需要全身放鬆的假日出遊。",
+   Dt:"全年",S:"Tourism BC",L:"https://www.harrisonresort.com",Map:"Harrison Hot Springs, British Columbia, Canada",
+   I:wm("Harrison Hot Spr Waterfront 2012.JPG")},
+
+  {T:"Chinatown 文化散步與孫中山庭園",M:"weekend",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"孫中山古典中式庭園是溫哥華最被低估的景點。中國城街區正在文化復興，手工湯圓老店、獨立書店與霓虹歷史招牌共存一街區，門票包含導覽值回票價。",
+   Dt:"全年",S:"604 Now",L:"https://vancouverchinatown.ca",Map:"Dr. Sun Yat-Sen Classical Chinese Garden, Vancouver, British Columbia, Canada",
+   I:wm("Vancouver's Chinatown at night. (15234326238).jpg")},
+
+  {T:"Whistler 一日山岳旅行",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"溫哥華人最引以為傲的後花園。夏天Mountain Bike、峽谷吊橋與高山花園；冬天全北美最大滑雪場。Sea-to-Sky Highway沿途風景本身就是目的地。",
+   Dt:"全年",S:"Tourism Whistler",L:"https://www.whistler.com",Map:"Whistler Village, Whistler, British Columbia, Canada",
+   I:wm("Autumn in Whistler Village (24404000548).jpg")},
+
+  {T:"Golden Ears Provincial Park 瀑布步道",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"Maple Ridge旁的大型省立公園，Upper Falls與Lower Falls兩條步道各自精彩，夏季瀑布水量壯觀。公園設有沙灘泳區與露營地，適合全家一日遊或過夜露營。",
+   Dt:"5月-10月",S:"Vancouver Trails",L:"https://www.vancouvertrails.com",Map:"Golden Ears Provincial Park, Maple Ridge, British Columbia, Canada",
+   I:wm("Alouette Lake Seen from Golden Ears Provincial Park.jpg")},
+
+  {T:"Buntzen Lake 環湖健行",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+   D:"BC Hydro管理的翡翠色水庫，夏天開放游泳，環湖步道約12km，Diez Vistas路線更可登上山脊俯瞰十個絕景。停車場假日早上8點前就滿，務必早到。",
+   Dt:"5月-10月",S:"Vancouver Trails",L:"https://www.vancouvertrails.com",Map:"Buntzen Lake Recreation Area, Anmore, British Columbia, Canada",
+   I:wm("Buntzen lake trail.JPG")},
+
+  {T:"Vancouver Art Gallery 最新特展",M:"weekend",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   D:"卑詩省最重要的當代藝術殿堂，每季特展水準極高。Robson Square露天廣場本身就是值得發呆的都市空間。週二自由定價入場，雨天最佳選擇。",
+   Dt:"全年，週二自由定價",S:"604 Now",L:"https://www.vanartgallery.bc.ca",Map:"Vancouver Art Gallery, 750 Hornby Street, Vancouver, British Columbia, Canada",
+   I:wm("The Vancouver Art Gallery (6912165519).jpg")},
+
+  /* ===== 美食（場館/街區真實照片）===== */
+  {T:"Good Thief 越南風雞尾酒吧",M:"weekend",C:"美食",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   D:"Anh and Chi的叛逆小妹，2025 Michelin認可。融合越南nhau文化與國際食材，田雞腿、Dungeness蟹蒜蓉炒麵一氣呵成。週四至日9pm後agave烈酒五折。",
+   Dt:"每日5pm起",S:"Curiocity Vancouver",L:"https://www.goodthief.ca",Map:"3336 Main Street, Vancouver, British Columbia, Canada",
+   I:wm("2414 Main Street Vancouver.JPG")},
+
+  {T:"Time Out Market Vancouver 美食市集",M:"weekend",C:"美食",R:"Others",Tr:"大眾運輸",W:"室內",
+   D:"2026年在Oakridge Park開幕的全加拿大首家Time Out Market，18個廚房、3個吧台。Rob Feenie漢堡、Lunch Lady越南街頭小吃、Barnacle海鮮吧，頂尖主廚同場競技。",
+   Dt:"2026春季起",S:"Daily Hive",L:"https://www.timeout.com/vancouver",Map:"Oakridge Park, 650 West 41st Avenue, Vancouver, British Columbia, Canada",
+   I:wm("2414 Main Street Vancouver.JPG")},
+
+  {T:"Sphere Coffee Bar Cambie精品咖啡",M:"weeknight",C:"美食",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   D:"2026年6月在Cambie街上新開幕，填補Oakridge一帶高質感咖啡空缺。精品豆、手沖與義式並重，室內設計清爽現代，適合平日下班後來一杯放鬆。",
+   Dt:"2026年6月起",S:"Nomsmagazine",L:"https://nomsmagazine.com",Map:"5898 Cambie Street, Vancouver, British Columbia, Canada",
+   I:wm("2414 Main Street Vancouver.JPG")},
+
+  {T:"Dimsum Caddy 飲茶加室內高爾夫",M:"weekend",C:"美食",R:"Richmond",Tr:"建議開車",W:"室內",
+   D:"Richmond全新跨界概念：精緻點心配室內高爾夫模擬器。提供精品飲茶與調酒的混搭體驗，是約朋友放鬆的新選擇，2026年6月開業。",
+   Dt:"2026年6月起",S:"Curiocity Vancouver",L:"https://do604.com",Map:"Richmond, British Columbia, Canada",
+   I:wm("Statues in front of the Cannery (6865002524).jpg")},
+
+  {T:"Bevel Yaletown全新餐廳",M:"weekend",C:"美食",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   D:"2026夏季在Mainland Street開幕，2800平方呎、140座位含全季節露台。研發逾三年的獨家pizza麵糰是亮點，由Text Me When You Land Hospitality團隊打造。",
+   Dt:"2026夏季",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"Mainland Street, Yaletown, Vancouver, British Columbia, Canada",
+   I:wm("False Creek Vancouver British Columbia Canada 02.jpg")},
+
+  /* ===== 音樂（場館建築真實照片）===== */
+  {T:"Cassian 電子音樂現場 Commodore Ballroom",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   MT:"Electronic · Deep House",Price:"票價約 $77+",
+   D:"澳洲電子音樂製作人Cassian帶來沉浸式深度House現場，Commodore Ballroom是溫哥華最有靈魂的中型場館，木地板舞池與頂級音響讓每次演出都難忘。",
+   Dt:"2026年6月19日（週五）10pm",S:"604 Now",L:"https://do604.com/events/2026/6/19/cassian-tickets",Map:"Commodore Ballroom, 868 Granville Street, Vancouver, British Columbia, Canada",
+   I:wm("Commodore Ballroom in Vancouver.JPG")},
+
+  {T:"FOR REAL FRIDAYS Celebrities Nightclub",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   MT:"Hip-Hop · R&B · Club",Price:"票價請見Ticketmaster",
+   D:"Celebrities Nightclub的夏季旗艦週五派對系列。溫哥華最具代表性的夜店，LGBTQ+友善空間，音響與燈光設備頂尖，是大溫夜生活的文化地標。",
+   Dt:"2026年6月19日（週五）10pm",S:"Ticketmaster",L:"https://www.ticketmaster.ca",Map:"Celebrities Nightclub, 1022 Davie Street, Vancouver, British Columbia, Canada",
+   I:wm("Al Fresco Dining across from Celebrities Night Club (5046618178).jpg")},
+
+  {T:"KOKOROKO Afrobeat現場 Commodore Ballroom",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   MT:"Afrobeat · Jazz · West African",Price:"票價約 $60+",
+   D:"倫敦8人Afrobeat樂團KOKOROKO，由小號手Sheila Maurice-Grey領軍。融合Fela Kuti與West African傳統音樂，現場管樂齊奏的震撼感是唱片無法取代的體驗。",
+   Dt:"2026年6月21日（週日）7pm",S:"604 Now / Songkick",L:"https://do604.com/events/2026/6/21/kokoroko-tickets",Map:"Commodore Ballroom, 868 Granville Street, Vancouver, British Columbia, Canada",
+   I:wm("Commodore Ballroom in Vancouver.JPG")},
+
+  {T:"HONNE 10週年巡演 Vogue Theatre",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   MT:"Electronic Soul · R&B · Synth-pop",Price:"票價約 $50+",
+   D:"英國電子靈魂雙人組HONNE的首張專輯10週年親密演出。stripped-back形式重新詮釋經典曲目，Vogue Theatre的小場規模讓這場演出極為珍貴。",
+   Dt:"2026年6月21日（週日）8pm",S:"Songkick / 604 Now",L:"https://do604.com/events/2026/6/21/honne-tickets",Map:"Vogue Theatre, 918 Granville Street, Vancouver, British Columbia, Canada",
+   I:wm("Vogue Theater, Vancouver.JPG")},
+
+  {T:"BLACK0UT Chapter II Fortune Sound Club",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
+   MT:"Hip-Hop · Trap · Electronic",Price:"票價請見Fortune官網",
+   D:"Fortune Sound Club的旗艦Hip-Hop深夜派對系列第二章。位於Chinatown街區，溫哥華華人社群高度討論的夜店，氛圍炸裂、DJ陣容每次都是驚喜。",
+   Dt:"2026年6月25日（週四）11pm",S:"Fortune Sound Club",L:"https://www.fortunesoundclub.com/events",Map:"Fortune Sound Club, 147 East Pender Street, Vancouver, British Columbia, Canada",
+   I:wm("Vancouver's Chinatown at night. (15234326238).jpg")},
+
+  {T:"Downtown Jazz 免費戶外音樂節",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   MT:"Jazz · World Music · DJ Set",Price:"完全免費",
+   D:"第41屆Vancouver International Jazz Festival壓軸免費系列，在溫哥華美術館廣場舉行。多個舞台同時開演，涵蓋現場爵士、DJ set、社區藝術攤位與美食車。",
+   Dt:"2026年6月27-28日",S:"Daily Hive",L:"https://www.coastaljazz.ca",Map:"Vancouver Art Gallery, 750 Hornby Street, Vancouver, British Columbia, Canada",
+   I:wm("The Vancouver Art Gallery (6912165519).jpg")},
+
+  {T:"SUNWAVE 2026 戶外電子音樂系列",M:"weekend",C:"音樂",R:"Others",Tr:"建議開車",W:"戶外",
+   MT:"House · Techno · Electronic",Price:"約 $25-45（依場次）",
+   D:"溫哥華夏季最受期待的戶外電音系列，多個場地輪辦，包含Museum of Vancouver等地點。每場均為開放式戶外體驗，沉浸感極強。",
+   Dt:"2026年6-8月（多場次）",S:"Eventbrite",L:"https://www.eventbrite.ca/d/canada--vancouver/rave-events/",Map:"Museum of Vancouver, 1100 Chestnut Street, Vancouver, British Columbia, Canada",
+   I:wm("Mount Seymour Provincial Park, BC (DSCF8496).jpg")},
+
+  {T:"FIFA Fan Festival 免費觀賽嘉年華",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   MT:"Live Music · Match Screening · Festival",Price:"免費入場（Premium保留席另計）",
+   D:"PNE Hastings Park新建一萬席戶外Amphitheatre，大螢幕直播FIFA World Cup賽事，搭配北美與本地音樂人現場演出，每日不同節目。28天嘉年華貫穿整個世足期間，免費入場無需球票，週末人潮最盛。",
+   Dt:"2026年6月11日-7月19日，每日",S:"604 Now / FIFA官方",L:"https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/fifa-fan-festival/vancouver",Map:"FIFA Fan Festival Vancouver, 2901 East Hastings Street, Vancouver, British Columbia, Canada",
+   I:wm("The Vancouver Art Gallery (6912165519).jpg")},
+
+  {T:"Stanley Park 免費戶外電影夜",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+   D:"FreshAirCinema主辦的Evo Summer Cinema回歸，每週二晚在Second Beach旁Ceperley Meadow架起四層樓高充氣螢幕放映經典電影，完全免費、自備野餐墊或椅子，現場有開場小遊戲與抽獎，禁菸禁酒。",
+   Dt:"7月5日-8月23日，每週二（日落後開始）",S:"604 Now",L:"https://freshaircinema.ca",Map:"Ceperley Meadow, Stanley Park, Vancouver, British Columbia, Canada",
+   I:wm("Stanley Park totem poles, Vancouver (2013) - 1.JPG")},
+
+  {T:"溫哥華冰淇淋節 自助甜點巡禮",M:"weeknight",C:"美食",R:"Others",Tr:"大眾運輸",W:"室內",
+   D:"Noms Magazine主辦第四屆，今年破紀錄超過40家冰淇淋/義式冰淇淋/甜點店參與，橫跨溫哥華、本拿比、列治文、北溫。自由選店打卡，蒐集Passport印章可抽獎，今年新增14家店包括列治文6家新店。",
+   Dt:"2026年6月19日-8月3日",S:"Vancouver Is Awesome / Noms Magazine",L:"https://nomsmagazine.com",Map:"Vancouver, British Columbia, Canada",
+   I:wm("Commercial Drive (8110991970).jpg")}
+  ];
+
+  var curMode = "all";
+  var curF = { region: "all", cat: "all", transit: "all", weather: "all" };
+
+  function buildCard(d) {
+    var card = document.createElement("div");
+    card.className = "card";
+    card.dataset.mode = d.M || "weekend";
+    card.dataset.cat = d.C || "";
+    card.dataset.region = d.R || "";
+    card.dataset.transit = d.Tr || "";
+    card.dataset.weather = d.W || "";
+
+    var ci = document.createElement("div");
+    ci.className = "ci";
+    var img = document.createElement("img");
+    img.src = d.I;
+    img.alt = d.T;
+    img.loading = "lazy";
+    img.addEventListener("error", function () {
+      ci.innerHTML = "";
+      ci.classList.add("ci-ph");
+      ci.textContent = "🌿";
+      ci.appendChild(bdg);
+      ci.appendChild(tbdg);
+    });
+    ci.appendChild(img);
+
+    var bdg = document.createElement("div");
+    bdg.className = "bdg";
+    bdg.textContent = d.C || "";
+    ci.appendChild(bdg);
+
+    var tbdg = document.createElement("div");
+    tbdg.className = "tbdg";
+    tbdg.textContent = d.M === "weeknight" ? "平日晚上" : "假日";
+    ci.appendChild(tbdg);
+
+    card.appendChild(ci);
+
+    var cm = document.createElement("div");
+    cm.className = "cm";
+    var cr = document.createElement("span");
+    cr.className = "cr";
+    cr.textContent = d.R || "";
+    cm.appendChild(cr);
+    var cs = document.createElement("span");
+    cs.className = "cs";
+    cs.textContent = (d.S || "") + " · " + (d.Dt || "");
+    cm.appendChild(cs);
+    card.appendChild(cm);
+
+    var ct = document.createElement("h2");
+    ct.className = "ct";
+    ct.textContent = d.T;
+    card.appendChild(ct);
+
+    if (d.MT) {
+      var mi = document.createElement("div");
+      mi.className = "mi";
+      var mt = document.createElement("span");
+      mt.className = "mt";
+      mt.textContent = d.MT;
+      mi.appendChild(mt);
+      card.appendChild(mi);
+      var pr = document.createElement("div");
+      pr.className = "pr";
+      pr.textContent = "💰 " + (d.Price || "詳見活動頁面");
+      card.appendChild(pr);
+    }
+
+    var cd = document.createElement("p");
+    cd.className = "cd";
+    cd.textContent = d.D || "";
+    card.appendChild(cd);
+
+    var cf = document.createElement("div");
+    cf.className = "cf";
+    var tags = document.createElement("div");
+    tags.className = "tags";
+    if (d.Tr) {
+      var t1 = document.createElement("span");
+      t1.className = "tag";
+      t1.textContent = d.Tr;
+      tags.appendChild(t1);
+    }
+    if (d.W) {
+      var t2 = document.createElement("span");
+      t2.className = "tag";
+      t2.textContent = d.W;
+      tags.appendChild(t2);
+    }
+    cf.appendChild(tags);
+
+    var lks = document.createElement("div");
+    lks.className = "lks";
+    var mapQ = d.Map || (d.T + " Vancouver British Columbia Canada");
+    var ma = document.createElement("a");
+    ma.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(mapQ);
+    ma.target = "_blank";
+    ma.rel = "noopener";
+    ma.className = "ml";
+    ma.textContent = "📍 導航";
+    lks.appendChild(ma);
+    if (d.L) {
+      var la = document.createElement("a");
+      la.href = d.L;
+      la.target = "_blank";
+      la.rel = "noopener";
+      la.className = "cl";
+      la.textContent = "詳情 →";
+      lks.appendChild(la);
+    }
+    cf.appendChild(lks);
+    card.appendChild(cf);
+
+    return card;
+  }
+
+  function render() {
+    var container = document.getElementById("cards");
+    container.innerHTML = "";
+    DATA.forEach(function (d) {
+      container.appendChild(buildCard(d));
+    });
+    applyFilter();
+  }
+
+  function applyFilter() {
+    var container = document.getElementById("cards");
+    var cards = container.querySelectorAll(".card");
+    var cnt = 0;
+    cards.forEach(function (c) {
+      var ok = (curMode === "all" || c.dataset.mode === curMode)
+        && (curF.region === "all" || c.dataset.region === curF.region)
+        && (curF.cat === "all" || c.dataset.cat === curF.cat)
+        && (curF.transit === "all" || c.dataset.transit === curF.transit)
+        && (curF.weather === "all" || c.dataset.weather === curF.weather);
+      c.classList.toggle("hidden", !ok);
+      if (ok) cnt++;
+    });
+    document.getElementById("cnt").textContent = cnt;
+
+    var old = container.querySelector(".empty");
+    if (old) old.remove();
+    if (cnt === 0) {
+      var e = document.createElement("div");
+      e.className = "empty";
+      var et = document.createElement("div");
+      et.className = "empty-t";
+      et.textContent = "沒有符合條件的行程";
+      e.appendChild(et);
+      var es = document.createElement("div");
+      es.className = "empty-s";
+      es.textContent = "試試調整上方篩選條件";
+      e.appendChild(es);
+      container.appendChild(e);
+    }
+  }
+
+  document.querySelectorAll(".tab").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".tab").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      curMode = btn.dataset.mode;
+      applyFilter();
+    });
+  });
+
+  document.querySelectorAll(".chip").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var f = chip.dataset.f;
+      document.querySelectorAll(".chip[data-f='" + f + "']").forEach(function (x) { x.classList.remove("active"); });
+      chip.classList.add("active");
+      curF[f] = chip.dataset.v;
+      applyFilter();
+    });
+  });
+
+  render();
+
+});
+</script>
+</body>
+</html>
