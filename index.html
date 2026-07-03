@@ -34,7 +34,7 @@ body{font-family:var(--sans);background:var(--wht);color:var(--blk);max-width:70
 .ci img{width:100%;height:100%;object-fit:cover;display:block}
 .ci-ph{font-size:2.2rem;color:var(--mid)}
 .bdg{position:absolute;top:8px;left:8px;background:#fff;font-size:.55rem;letter-spacing:.08em;padding:3px 8px;font-weight:700;border-radius:3px}
-.tbdg{position:absolute;top:8px;right:8px;background:var(--blk);color:#fff;font-size:.55rem;padding:3px 8px;font-weight:600;border-radius:3px}
+.tbdg{position:absolute;top:8px;right:8px;background:var(--blk);color:#fff;font-size:.55rem;padding:3px 8px;font-weight:600;border-radius:3px}.dbdg{position:absolute;top:35px;right:8px;background:#e74c3c;color:#fff;font-size:.55rem;padding:3px 8px;font-weight:700;border-radius:3px;letter-spacing:.03em}
 .cm{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
 .cr{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--drk)}
 .cs{font-size:.58rem;color:var(--mid);margin-left:auto}
@@ -95,6 +95,13 @@ footer{border-top:1px solid var(--blk);padding:24px 0;margin-top:20px;text-align
       <button class="chip" data-f="cat" data-v="逛街">逛街</button>
       <button class="chip" data-f="cat" data-v="音樂">音樂</button>
       <button class="chip" data-f="cat" data-v="美食">美食</button>
+      <button class="chip" data-f="cat" data-v="活動">活動</button>
+      <button class="chip" data-f="cat" data-v="游泳">游泳</button>
+      <button class="chip" data-f="cat" data-v="美景">美景</button>
+      <button class="chip" data-f="cat" data-v="水上活動">水上活動</button>
+      <button class="chip" data-f="cat" data-v="Bar">Bar</button>
+      <button class="chip" data-f="cat" data-v="Clubbing">Clubbing</button>
+      <button class="chip" data-f="cat" data-v="新潮體驗">新潮體驗</button>
     </div>
   </div>
   <div class="fg">
@@ -120,7 +127,7 @@ footer{border-top:1px solid var(--blk);padding:24px 0;margin-top:20px;text-align
 <footer>
   <div class="fb">出去玩最開心</div>
   <div class="fn">圖片來源：Wikimedia Commons ｜ 資訊來源：604 Now · Daily Hive · Songkick · Fortune Sound Club · Miss604 · Vancouver Is Awesome · 一般搜尋</div>
-  <div class="fn" style="margin-top:4px">最後更新：2026年6月19日</div>
+  <div class="fn" style="margin-top:4px">最後更新：2026年7月3日</div>
 </footer>
 
 <script>
@@ -148,31 +155,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Granville站出發 → Burrard Bridge步道 → Kitsilano Beach躺看夕陽。從Granville站走橋上人行道，過橋後直接接上Kits Beach沙灘，可以一路走到沙灘的躺椅區坐到天黑，動線完全沿著海岸，中途不用繞路，超順。",
    N:"橋上人行道偏窄、跟自行車共用，黃昏時段人車都多，建議走橋邊靠外側欄杆那條，拍照時記得讓行給通勤的自行車。",
    Dt:"平日任意日",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"Burrard Bridge, Vancouver, British Columbia, Canada",
-   I:wm("Burrard Bridge, Vancouver (2012) - 1.JPG")},
-
-  {T:"Capilano River 溪谷步道",M:"weeknight",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
-   F:"Capilano River Regional Park沿著峽谷而建，這條河自古就是鮭魚迴游的重要水道，每年秋天還能看到鮭魚逆流而上，本地人喜歡這裡，是因為步道平緩、林蔭濃密，是「下班後不用開很久的車也能森林浴」的存在。",
-   BT:"全年開放、免費入園；日落前1小時出發剛好能走完來回路段，夏季傍晚林間溫度比市區低很多，很適合避暑。",
-   IT:"Cleveland Dam停車場 → Pipe Bridge觀景橋 → Salmon Hatchery鮭魚孵育場（若開放）。從大壩停車場進入沿河谷走到吊橋拍照點，回程順道看看鮭魚孵育設施，是單一環形路線不會走重複路，很適合散步約會。",
-   N:"部分支線步道較濕滑，雨後建議穿防滑鞋；鮭魚迴游季（約9-11月）現場較熱鬧，平日傍晚仍是人最少的時段。",
-   Dt:"平日任意日",S:"604 Now",L:"https://do604.com",Map:"Capilano River Regional Park, North Vancouver, British Columbia, Canada",
-   I:wm("Capilano suspension bridge -a.jpg")},
-
-  {T:"Stanley Park 黃昏跑步",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
-   F:"Stanley Park的海堤跑步路線是本地跑者的心頭好，這片海岸是Squamish、Musqueam、Tsleil-Waututh族世代生活的土地，夜幕低垂時跑向Brockton Point燈塔，左手邊是港口船隻燈火、右手邊是北溫山脈剪影，夜跑的寧靜感跟白天的觀光人潮完全是兩個世界。",
-   BT:"全年開放、24小時免費，平日傍晚最推薦，日落後天色全黑前這段「藍色時刻」最美；冬天記得帶頭燈，夏天傍晚反而涼爽舒適。",
-   IT:"Coal Harbour入口起跑 → Brockton Point燈塔 → Lumberman's Arch圖騰柱。沿海堤單程約3km到燈塔看夜景，回程順道走到圖騰柱旁拍張照，整段路完全沿海堤不用穿越車道，安全又好認路。",
-   N:"海堤照明在燈塔以外路段較少，建議結伴或帶反光臂帶；單程約3km、來回6km，體力沒把握建議只跑單程後搭公車返回。",
-   Dt:"平日任意日",S:"Tourism Vancouver",L:"https://stanleypark.com",Map:"Stanley Park, Vancouver, British Columbia, Canada",
-   I:wm("Stanley Park totem poles, Vancouver (2013) - 1.JPG")},
-
-  {T:"Granville Island 傍晚市集",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"室內",
-   F:"Granville Island原本是1900年代的工業小島（船廠、鋸木廠），1970年代轉型成創意市集後保留了大量工業風建築外觀，本地人喜歡傍晚來，是因為遊客退潮後，才是真正屬於溫哥華人的悠閒採買時光。",
-   BT:"Public Market營業時間以官網最新公告為準，建議5點後抵達，人潮明顯變少；假日白天則是觀光客最多的時段，平日傍晚體驗完全不同。",
-   IT:"Public Market採買晚餐 → 海堤步道散步 → Bridges Restaurant露台喝一杯。先進市場挑現烤麵包跟起司當晚餐，出來沿海堤走幾步路就到河岸，坐在露台看夕陽下的False Creek，整段動線都在小島範圍內，完全不用移動交通工具。",
-   N:"部分小店週一公休，建議出發前用Google地圖查詢個別店家當天營業狀況；停車場假日經常滿，平日傍晚相對好停。",
-   Dt:"平日至7pm",S:"Tourism Vancouver",L:"https://granvilleisland.com",Map:"Granville Island Public Market, 1669 Johnston Street, Vancouver, British Columbia, Canada",
-   I:wm("Granville Island (118200909).jpg")},
+   I:wm("Burrard Bridge, Vancouver (2012) - 1.JPG")},,,,
 
   {T:"Lonsdale Quay 碼頭夜間散步",M:"weeknight",C:"逛街",R:"North Van",Tr:"大眾運輸",W:"戶外",
    F:"Lonsdale Quay是North Vancouver的渡輪門戶，SeaBus這條航線從1977年就在運行，是溫哥華少有「通勤船」變成「觀光體驗」的交通工具，本地人喜歡周五夜市的悠閒氣氛，遠勝過假日人擠人。",
@@ -196,15 +179,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Waterfront站出站 → Vancouver Lookout觀景 → Canada Place海濱走走。出站走3分鐘就到塔下，上樓看完夜景後下樓往海邊方向走，Canada Place的白帆造型建築夜晚打燈也很好拍，動線完全沿著市中心北端，不用搭車。",
    N:"門票需另外購買，並非免費景點；遇到強風或維修日偶爾會暫停開放，出發前建議查官網確認當天營運狀態。",
    Dt:"平日9am-9pm",S:"Tourism Vancouver",L:"https://vancouverlookout.com",Map:"Vancouver Lookout, 555 West Hastings Street, Vancouver, British Columbia, Canada",
-   I:wm("Downtown from Port Vancouver - panoramio.jpg")},
-
-  {T:"Yaletown / False Creek 黃昏慢跑",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
-   F:"Yaletown過去是鐵路貨運倉庫區，1986年世博會後逐漸轉型成精品社區，沿著False Creek這段濱水跑道本地人特別愛，是因為一邊是磚牆倉庫改建的高級公寓、一邊是水面映著夕陽，新舊溫哥華在這條路上交會。",
-   BT:"平日傍晚為主，全年開放免費使用；夏季傍晚7-9點是最多人運動的時段，但步道夠寬不會太擁擠。",
-   IT:"Yaletown-Roundhouse站出發 → False Creek濱水步道 → Granville Island。從捷運站出發沿水岸跑或走到Granville Island，全程約5km地勢平坦，終點剛好可以進市場喝杯飲料休息，單向直線路線，不容易迷路。",
-   N:"步道與自行車道是共用，建議運動時注意方向標示，避開逆向造成碰撞。",
-   Dt:"平日任意日",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"Yaletown, Vancouver, British Columbia, Canada",
-   I:wm("False Creek Vancouver British Columbia Canada 02.jpg")},
+   I:wm("Downtown from Port Vancouver - panoramio.jpg")},,
 
   {T:"Queen Elizabeth Park 半山夕陽",M:"weeknight",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
    F:"Queen Elizabeth Park所在的小山丘曾經是採石場，1930年代填平後改建成公園，現在是溫哥華市區海拔最高的公園（152米）——本地人喜歡傍晚來，是因為玫瑰園跟Bloedel溫室周邊視野遼闊，而且免門票就能換到接近山頂的全景。",
@@ -317,23 +292,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Rubble Creek停車場起登 → Garibaldi Lake翡翠湖 → Panorama Ridge或Black Tusk頂峰。先走到湖邊歇腳補水，再依體力選擇繼續挑戰其中一條頂峰路線，全程都是清楚的單一主線步道，不容易迷路，但需要充足體力與時間規劃。",
    N:"全程往返通常需要一整天甚至更久，務必查詢開山日期、攜帶足夠裝備並提早出發；停車場一滿即無法進入，假日建議改平日前往。",
    Dt:"6月-10月",S:"604 Now",L:"https://do604.com",Map:"Garibaldi Provincial Park, British Columbia, Canada",
-   I:wm("Atop the Black Tusk in Garibaldi Park.jpg")},
-
-  {T:"Granville Island 全日探索",M:"weekend",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"室內",
-   F:"跟前面晚間市集是同一個地方，但白天的Granville Island是另一個樣子——這裡曾是工業船廠小島，1970年代政府刻意保留工業外觀改造成創意聚落，本地人喜歡假日整天耗在這裡，是因為市集、工藝品店、畫廊密度高到走一天都逛不完。",
-   BT:"全年開放，Public Market營業時間以官網公告為準；假日上午人潮較少，下午後遊客逐漸增多，建議一早出發。",
-   IT:"Public Market採買早餐 → 工藝品店與畫廊漫遊 → 海邊精釀啤酒坐看夕陽。早上先去市場吃早餐，整個下午花在逛工藝品店與小畫廊，傍晚找間海邊的酒吧坐下收尾，整天行程都在小島範圍內完成，不需要額外交通安排。",
-   N:"假日車位很搶手，建議搭公車或Aquabus水上計程車前往，省去找車位的麻煩。",
-   Dt:"全年",S:"Tourism Vancouver",L:"https://granvilleisland.com",Map:"Granville Island, Vancouver, British Columbia, Canada",
-   I:wm("Granville Island (118200909).jpg")},
-
-  {T:"Capilano Suspension Bridge 吊橋公園",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
-   F:"Capilano Suspension Bridge自1889年就有第一代吊橋存在，是溫哥華歷史最悠久的觀光景點之一，137米長的吊橋橫跨深谷，本地人會推薦給外地朋友，是因為Treetops Adventure樹冠步道跟Cliffwalk懸崖步道能從不同高度體驗同一片峽谷森林。",
-   BT:"全年開放，營業時間以官網公告為準；建議假日下午前往，上午是旅行團尖峰時段，下午相對寬鬆。",
-   IT:"吊橋體驗 → Treetops Adventure樹冠步道 → Cliffwalk懸崖步道。先走過主吊橋，接著去樹冠步道從高處看森林，最後走懸崖步道從另一個角度俯瞰峽谷，三段體驗剛好是園區規劃的自然動線，跟著走標示就不會錯過任何一段。",
-   N:"門票價格較高，建議提前線上購票可能有折扣；旺季人潮多，建議避開上午10點到下午2點的尖峰時段。",
-   Dt:"全年",S:"604 Now",L:"https://www.capbridge.com",Map:"Capilano Suspension Bridge Park, North Vancouver, British Columbia, Canada",
-   I:wm("Capilano suspension bridge -a.jpg")},
+   I:wm("Atop the Black Tusk in Garibaldi Park.jpg")},,,
 
   {T:"Fort Langley 歷史小鎮一日遊",M:"weekend",C:"逛街",R:"Others",Tr:"建議開車",W:"戶外",
    F:"Fort Langley是英屬哥倫比亞殖民地於1858年宣告成立的地點，被視為「BC省的誕生地」，本地人喜歡來這裡，是因為國家歷史遺址旁的老街道至今仍保留古董店、手工果醬鋪，節奏完全慢下來，跟城市的快步調形成強烈對比。",
@@ -341,23 +300,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Fort Langley國家歷史遺址參觀 → 老街古董店與果醬鋪 → 精釀酒吧坐下休息。先進歷史遺址了解BC建省的故事，出來沿老街逛古董店跟果醬鋪，最後找間精釀酒吧坐下收尾一天行程，整條老街呈一直線，逛完自然就走到酒吧區。",
    N:"從市區開車約40-50分鐘，建議避開週五傍晚與假日下午的車流尖峰；歷史遺址門票需另外購買。",
    Dt:"全年",S:"Daily Hive",L:"https://www.pc.gc.ca/fortlangley",Map:"Fort Langley National Historic Site, Fort Langley, British Columbia, Canada",
-   I:wm("Fort Langley Community Hall.jpg")},
-
-  {T:"Deep Cove 獨木舟全日",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
-   F:"Deep Cove的獨木舟體驗之所以特別，是因為划向的Indian Arm峽灣是世代屬於Tsleil-Waututh族的傳統水域，兩岸高山直壁而下、野生海豹偶爾出沒，本地人喜歡假日划船來這裡，是因為這種「峽灣秘境感」在溫哥華近郊極為少見。",
-   BT:"5月到10月是最佳季節，假日人氣旺，建議上午9點前抵達租船，避開下午的排隊人潮與較強風浪。",
-   IT:"租船下水 → 划向Indian Arm峽灣 → 回程Honey's Doughnuts補甜點。早上租好船划向峽灣深處，看夠野生海豹跟峽灣景色後原路划回，上岸後直接去Honey's Doughnuts吃甜點當作儀式收尾，是當地划船人公認的固定流程。",
-   N:"假日租船需求量大，建議提前線上預約；風浪較大的日子建議現場諮詢店家是否適合下水，安全優先。",
-   Dt:"5月-10月",S:"Tourism Vancouver",L:"https://deepcovekayak.com",Map:"Deep Cove, North Vancouver, British Columbia, Canada",
-   I:wm("Lonsdale Ave North Vancouver BC.JPG")},
-
-  {T:"Stanley Park 環園一日",M:"weekend",C:"Hiking",R:"Downtown",Tr:"大眾運輸",W:"戶外",
-   F:"溫哥華人心中真正的「城市客廳」。1888年設立，比加拿大聯邦成立還早一年，這片土地世代屬於Squamish、Musqueam、Tsleil-Waututh三個原住民族，園內保留的Totem Poles正是向這段歷史致意。本地人愛它不只因為風景，而是這片668公頃森林、海岸線與市中心步行可達的距離，是全球少有的城市奇蹟——下班後騎車環園一圈，是許多Vancouverite的日常儀式。",
-   BT:"全年開放、24小時免費入園無需門票。Seawall騎車建議避開週末上午10點到下午3點的觀光人潮高峰，平日傍晚或週末清晨7-9點人最少、晨光也最美。冬季（11-2月）日照短，建議下午3點前出發完成全程。",
-   IT:"建議從Coal Harbour方向逆時針出發，沿Seawall全程約10km、2.5-3小時可騎完，中途在Third Beach歇腳看海。終點順道銜接Granville Island：腳踏車可直接騎到旁邊的迷你渡輪碼頭，3分鐘船程到對岸吃午餐逛市集，全程不需切換交通工具，路線最順、不走回頭路。",
-   N:"Seawall沿線偶因施工封閉改道（尤其Lions Gate Bridge附近），出發前建議查Vancouver Park Board官網確認最新路況；租車店多集中在Denman Street與Georgia Street入口，假日尖峰建議提早15-20分鐘到場排隊取車。",
-   Dt:"全年",S:"604 Now",L:"https://stanleypark.com",Map:"Stanley Park, Vancouver, British Columbia, Canada",
-   I:wm("Stanley Park totem poles, Vancouver (2013) - 1.JPG")},
+   I:wm("Fort Langley Community Hall.jpg")},,,
 
   {T:"Sunshine Coast / Gibsons 渡輪小旅行",M:"weekend",C:"逛街",R:"Others",Tr:"大眾運輸",W:"戶外",
    F:"Gibsons是加拿大知名電視劇《The Beachcombers》的拍攝地，這部劇從1972年播到1990年，是CBC史上播映最久的劇集之一，本地人喜歡搭渡輪去Gibsons，是因為40分鐘船程帶來的「出國感」，遠超過實際的地理距離。",
@@ -381,15 +324,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Chief停車場起登 → First Peak → Second/Third Peak（依體力選擇）。先登上First Peak，若體力跟時間允許可以繼續挑戰其他兩個山頂，沿途有清楚指標分岔，可以依當天狀況彈性決定要走多遠。",
    N:"假日停車一位難求，建議考慮共乘或搭乘接駁服務；三個山頂全部走完需要較長時間與體力，務必評估自身狀況再決定路線長度。",
    Dt:"5月-10月",S:"604 Now",L:"https://do604.com",Map:"Stawamus Chief Provincial Park, Squamish, British Columbia, Canada",
-   I:wm("Hiking The Chief in Squamish 13-1010 - 17.jpg")},
-
-  {T:"Jericho Beach 夏日海灘",M:"weekend",C:"Hiking",R:"Others",Tr:"大眾運輸",W:"戶外",
-   F:"Jericho Beach過去是空軍水上飛機基地，戰後改建成公園海灘，本地人喜歡假日來這裡，是因為淺灘水溫相對溫和適合家庭游泳，沙灘排球場跟風帆課程的活力氣氛，跟對面市區沙灘的安靜散步氛圍很不一樣。",
-   BT:"夏季是最佳季節，假日下午人潮最多，建議上午抵達占位置；風帆課程需另外報名，建議出發前查詢當天課程時段。",
-   IT:"沙灘野餐 → 沙灘排球或游泳 → 沿岸散步到Locarno Beach看夕陽。先找位置鋪野餐墊，玩沙灘排球或游泳消磨下午，傍晚再沿海岸線散步到隔壁海灘看夕陽，整段海岸線是連在一起的，散步動線很順。",
-   N:"沙灘BBQ架需要自備炭跟工具，且使用前建議確認當天公園規定；夏季假日人潮多，建議提早占位。",
-   Dt:"夏季最佳",S:"604 Now",L:"https://do604.com",Map:"Jericho Beach Park, Vancouver, British Columbia, Canada",
-   I:wm("Jericho Beach 2011-10-27-001.jpg")},
+   I:wm("Hiking The Chief in Squamish 13-1010 - 17.jpg")},,
 
   {T:"Harrison Hot Springs 溫泉小鎮",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"室內",
    F:"Harrison Hot Springs自19世紀末就因天然溫泉聞名，曾吸引大量遊客前來「療養度假」，本地人喜歡雨天或需要全身放鬆時來這裡，是因為Harrison Lake湖畔露天溫泉跟沙雕公園的組合，是溫哥華近郊少見的「度假村感」一日遊選擇。",
@@ -470,15 +405,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Dimsum Caddy飲茶配高爾夫 → Richmond周邊逛逛 → 視時間安排返程。在這裡吃完精緻點心、打完幾洞模擬高爾夫後，可以視當天時間決定要不要順道逛逛Richmond其他商場或回程，這個行程本身室內娛樂屬性強，適合作為雨天備案。",
    N:"2026年6月才剛開業，部分設施與服務細節可能仍在調整，建議出發前致電或查詢社群最新動態確認營業狀況。",
    Dt:"2026年6月起",S:"Curiocity Vancouver",L:"https://do604.com",Map:"Richmond, British Columbia, Canada",
-   I:wm("Statues in front of the Cannery (6865002524).jpg")},
-
-  {T:"Bevel Yaletown全新餐廳",M:"weekend",C:"美食",R:"Downtown",Tr:"大眾運輸",W:"室內",
-   F:"Bevel是由Text Me When You Land Hospitality團隊打造的全新餐廳，研發超過三年的獨家pizza麵糰是最大亮點，本地饕客關注的原因，是這個團隊過去在溫哥華餐飲圈已有口碑，這次選在Yaletown開出2800平方呎、140座位的大型空間，是該團隊目前規模最大的作品。",
-   BT:"2026夏季開幕，全季節露台讓這裡即使在較涼的月份也能享受戶外用餐；建議假日晚餐時段提前訂位，新開幕初期通常人氣較旺。",
-   IT:"Bevel晚餐嚐獨家pizza → Yaletown歷史街區散步 → False Creek海濱走走收尾。吃完招牌pizza後，可以沿著Yaletown磚牆倉庫改建的街區散步，消化的同時感受新舊交融的街景，最後走到旁邊的False Creek海濱收尾看夜景，三個點都在Yaletown核心區域內，步行距離都不遠。",
-   N:"新開幕餐廳建議提前訂位，尤其假日晚餐時段；獨家pizza麵糰為招牌賣點，建議詢問服務生當天是否有限量供應狀況。",
-   Dt:"2026夏季",S:"Daily Hive",L:"https://dailyhive.com/vancouver",Map:"Mainland Street, Yaletown, Vancouver, British Columbia, Canada",
-   I:wm("False Creek Vancouver British Columbia Canada 02.jpg")},
+   I:wm("Statues in front of the Cannery (6865002524).jpg")},,
 
   /* ===== 音樂（場館建築真實照片）===== */
   {T:"Cassian 電子音樂現場 Commodore Ballroom",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
@@ -488,16 +415,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Commodore Ballroom看演出 → Granville Street酒吧續攤 → 宵夜收尾。演出結束後Commodore就位在Granville Street娛樂區的核心，散場後直接走幾步路就有很多酒吧可以續攤，再找間24小時營業的餐館吃宵夜，整段夜生活動線完全集中在這一條街上，不用再叫車移動。",
    N:"票價約$77起，售票網站以官方公告為準；演出為單場限定（2026年6月19日），售完即不再加場，建議提前購票。",
    Dt:"2026年6月19日（週五）10pm",S:"604 Now",L:"https://do604.com/events/2026/6/19/cassian-tickets",Map:"Commodore Ballroom, 868 Granville Street, Vancouver, British Columbia, Canada",
-   I:wm("Commodore Ballroom in Vancouver.JPG")},
-
-  {T:"FOR REAL FRIDAYS Celebrities Nightclub",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
-   MT:"Hip-Hop · R&B · Club",Price:"票價請見Ticketmaster",
-   F:"Celebrities Nightclub是溫哥華歷史最悠久的LGBTQ+友善夜店之一，從1990年代開業至今持續是Davie Street同志商圈的文化地標，本地夜生活愛好者喜歡這個系列派對，是因為頂尖的音響跟燈光設備加上友善包容的氛圍，是大溫夜店裡數一數二的體驗。",
-   BT:"演出當天（2026年6月19日週五）晚上10點開場，這個系列為夏季旗艦週五固定場次，建議出發前查詢Ticketmaster當週具體陣容安排。",
-   IT:"Celebrities Nightclub跳舞 → Davie Street周邊酒吧探索 → 宵夜收尾。夜店本身就位在Davie Street同志商圈核心，跳完舞可以沿街繼續探索周邊其他酒吧的不同氛圍，最後找間深夜餐館吃點東西，整個商圈步行範圍內就能完成一整晚的夜生活安排。",
-   N:"票價請見Ticketmaster官網，依場次與陣容會有變動；夜店通常有年齡限制（19歲以上），記得攜帶身分證件。",
-   Dt:"2026年6月19日（週五）10pm",S:"Ticketmaster",L:"https://www.ticketmaster.ca",Map:"Celebrities Nightclub, 1022 Davie Street, Vancouver, British Columbia, Canada",
-   I:wm("Al Fresco Dining across from Celebrities Night Club (5046618178).jpg")},
+   I:wm("Commodore Ballroom in Vancouver.JPG"),Badge:"7月"},,
 
   {T:"KOKOROKO Afrobeat現場 Commodore Ballroom",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
    MT:"Afrobeat · Jazz · West African",Price:"票價約 $60+",
@@ -506,7 +424,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Commodore Ballroom看演出 → Granville Street簡單宵夜 → 早點搭車回家。因為是週日晚場演出時間較早，看完演出後可以在Granville Street隨意找間店吃簡單宵夜，不用像週五週六那樣安排到通宵的夜生活行程，是「週日也能聽好音樂又不影響週一上班」的理想安排。",
    N:"票價約$60起，週日場次售票狀況以官網為準；場館位於市中心，建議搭乘大眾運輸前往，避免找停車位的麻煩。",
    Dt:"2026年6月21日（週日）7pm",S:"604 Now / Songkick",L:"https://do604.com/events/2026/6/21/kokoroko-tickets",Map:"Commodore Ballroom, 868 Granville Street, Vancouver, British Columbia, Canada",
-   I:wm("Commodore Ballroom in Vancouver.JPG")},
+   I:wm("Commodore Ballroom in Vancouver.JPG"),Badge:"7月"},
 
   {T:"HONNE 10週年巡演 Vogue Theatre",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
    MT:"Electronic Soul · R&B · Synth-pop",Price:"票價約 $50+",
@@ -515,7 +433,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Vogue Theatre看演出 → Granville Street周邊散步 → 簡單晚餐收尾。Vogue Theatre就位在Granville Street娛樂區內，演出前可以先在周邊散步吃晚餐，看完演出後因為場次較早結束，還能悠閒散步消化整晚的氣氛再回家。",
    N:"Vogue Theatre場館較小，熱門場次容易完售，建議提前購票；老戲院座位較傳統，部分視角可能受限，購票時建議留意座位圖。",
    Dt:"2026年6月21日（週日）8pm",S:"Songkick / 604 Now",L:"https://do604.com/events/2026/6/21/honne-tickets",Map:"Vogue Theatre, 918 Granville Street, Vancouver, British Columbia, Canada",
-   I:wm("Vogue Theater, Vancouver.JPG")},
+   I:wm("Vogue Theater, Vancouver.JPG"),Badge:"7月"},
 
   {T:"BLACK0UT Chapter II Fortune Sound Club",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
    MT:"Hip-Hop · Trap · Electronic",Price:"票價請見Fortune官網",
@@ -542,7 +460,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"視當週場次地點安排出發 → 提早到場感受日落前氛圍 → 隨音樂跳到深夜。因為每場場地不同，建議先查好當週場次地點，提早抵達能感受到日落時段最佳的氛圍轉換，這也是戶外電音系列最迷人的部分——音樂跟著光線一起變化。",
    N:"不同場次票價約$25-45不等，依場次而異；場地會輪換，務必在出發前確認當週的具體地點，避免跑錯場地。",
    Dt:"2026年6-8月（多場次）",S:"Eventbrite",L:"https://www.eventbrite.ca/d/canada--vancouver/rave-events/",Map:"Museum of Vancouver, 1100 Chestnut Street, Vancouver, British Columbia, Canada",
-   I:wm("Museum of Vancouver neon exhibit.jpg")},
+   I:wm("Museum of Vancouver neon exhibit.jpg"),Badge:"6/26-7/5"},
 
   {T:"FIFA Fan Festival 免費觀賽嘉年華",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"戶外",
    MT:"Live Music · Match Screening · Festival",Price:"免費入場（Premium保留席另計）",
@@ -551,15 +469,7 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"大螢幕看世足賽事轉播 → 現場音樂演出 → 美食攤位覓食。先找位置看比賽轉播，賽事間歇或結束後可以欣賞現場音樂人演出，肚子餓了就去周邊美食攤位覓食，整個28天嘉年華的節目安排都集中在Hastings Park範圍內，一次造訪就能體驗多種活動。",
    N:"免費入場無需球票，但Premium保留席需另外付費；週末人潮最盛，建議平日傍晚前往體驗更從容，或提早到場占位。",
    Dt:"2026年6月11日-7月19日，每日",S:"604 Now / FIFA官方",L:"https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/fifa-fan-festival/vancouver",Map:"FIFA Fan Festival Vancouver, 2901 East Hastings Street, Vancouver, British Columbia, Canada",
-   I:wm("The Vancouver Art Gallery (6912165519).jpg")},
-
-  {T:"Stanley Park 免費戶外電影夜",M:"weeknight",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
-   F:"Evo Summer Cinema由FreshAirCinema主辦，每年夏天回歸Stanley Park的Second Beach旁，本地家庭跟年輕人都喜歡這個傳統，是因為四層樓高的充氣螢幕配上海灘旁的草地，完全免費卻有著比一般電影院更難忘的氛圍——看電影同時還能聽到海浪聲。",
-   BT:"活動期間為7月5日至8月23日，每週二日落後開始（具體開演時間隨日落時間調整），建議日落前1小時抵達占位置鋪野餐墊。",
-   IT:"Ceperley Meadow占位鋪野餐墊 → 開場小遊戲與抽獎 → 看電影收尾。提早抵達先鋪好野餐墊佔位，開場前通常會有小遊戲跟抽獎熱場，接著就是放映電影本身，整個流程都在同一片草地上完成，不需要移動位置。",
-   N:"每週二限定場次，並非每天都有；活動現場禁菸禁酒，請自備野餐墊或椅子，場地不提供座位。",
-   Dt:"7月5日-8月23日，每週二（日落後開始）",S:"604 Now",L:"https://freshaircinema.ca",Map:"Ceperley Meadow, Stanley Park, Vancouver, British Columbia, Canada",
-   I:wm("Stanley Park totem poles, Vancouver (2013) - 1.JPG")},
+   I:wm("The Vancouver Art Gallery (6912165519).jpg")},,
 
   {T:"溫哥華冰淇淋節 自助甜點巡禮",M:"weeknight",C:"美食",R:"Others",Tr:"大眾運輸",W:"室內",
    F:"溫哥華冰淇淋節由Noms Magazine主辦，今年已是第四屆，本地甜點愛好者期待的原因，是這個活動把橫跨溫哥華、本拿比、列治文、北溫超過40家冰淇淋店串連成一張「甜點地圖」，用打卡蒐集Passport印章的遊戲化方式，鼓勵大家探索平常不會特地去的店家。",
@@ -569,14 +479,7 @@ window.addEventListener("DOMContentLoaded", function () {
    Dt:"2026年6月19日-8月3日",S:"Vancouver Is Awesome / Noms Magazine",L:"https://nomsmagazine.com",Map:"Vancouver, British Columbia, Canada",
    I:wm("Commercial Drive (8110991970).jpg")},
 
-  /* ===== 2026/6/19 go 更新：新發現活動 ===== */
-  {T:"Stanley Park Mini Golf 異想世界迷你高爾夫",M:"weekend",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
-   F:"這片場地過去是Stanley Park小火車的所在地，公園局目前正在規劃這個場地的長期新用途，這次的迷你高爾夫是過渡期的限時體驗，本地人對這個消息又期待又好奇，是因為18洞主題設計（像Mushroom Patch、Escher's Pass這些充滿故事性的洞名）把一般迷你高爾夫變成了一場小型奇幻冒險。",
-   BT:"2026年7月1日開幕至秋季結束，週日至週三營業到晚上9點、週四至週六延長到晚上11點並有DJ Pablo Vinyl Nights；週末午後則是Wonderland Weekends主題活動，想要更熱鬧氛圍可以挑週末晚場。",
-   IT:"18洞迷你高爾夫挑戰 → Stanley Park海堤散步消化 → DJ Vinyl Nights收尾（週四至六限定）。打完18洞之後可以順道走到旁邊的海堤散步，吹吹海風消化一下剛剛的歡笑，如果是週四到週六晚上，剛好能留下來聽DJ放黑膠收尾這個夜晚，整套行程都在Stanley Park範圍內，不用額外移動。",
-   N:"為期間限定設施，僅開放至2026年秋季（具體結束日期請查官網）；票價依9洞或18洞、平日或週末有所不同，家庭套票需另外查詢，建議出發前上官網確認當天場次與票價。",
-   Dt:"2026年7月1日起至秋季，週日至三10am-9pm／週四至六10am-11pm",S:"Miss604",L:"https://www.stanleyparkminigolf.com/",Map:"Stanley Park Train, 690 Pipeline Road, Vancouver, British Columbia, Canada",
-   I:wm("Stanley Park totem poles, Vancouver (2013) - 1.JPG")},
+  /* ===== 2026/6/19 go 更新：新發現活動 ===== */,
 
   {T:"Band on a Boat 爵士音樂船遊 False Creek",M:"weekend",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"戶外",
    MT:"Jazz · World Music · 戶外免費",Price:"完全免費",
@@ -585,9 +488,9 @@ window.addEventListener("DOMContentLoaded", function () {
    IT:"Olympic Village Canoe Bridge卡位聽演出 → False Creek海濱散步 → Olympic Village小酒館收尾。提早到Canoe Bridge附近找個好位置，聽完渡輪上的免費演出後，沿著False Creek海濱散步消化，最後在Olympic Village周邊找間小酒館坐下收尾這個平日夜晚，整段路線都沿著水岸，風景跟著音樂一起延續。",
    N:"完全免費，但現場位置有限，建議提早15-20分鐘抵達卡位；Jazz Festival期間（6月19日至7月5日）還有超過30場免費或自由定價演出，可以查詢官網安排其他場次。",
    Dt:"2026年6月25日（週四）6:00pm",S:"Miss604 / Coastal Jazz",L:"https://www.coastaljazz.ca/event/dalava-boab/",Map:"Olympic Village Canoe Bridge, False Creek, Vancouver, British Columbia, Canada",
-   I:wm("False Creek Vancouver British Columbia Canada 02.jpg")},
+   I:wm("False Creek Vancouver British Columbia Canada 02.jpg"),Badge:"6/11-7/19"},
 
-  {T:"Lansdowne Centre 免費露天電影之夜",M:"weeknight",C:"逛街",R:"Richmond",Tr:"建議開車",W:"戶外",
+  {T:"Lansdowne Centre 免費露天電影之夜",Weekly:true,M:"weeknight",C:"逛街",R:"Richmond",Tr:"建議開車",W:"戶外",
    F:"Lansdowne Centre的免費露天電影系列已經是Richmond夏季的固定傳統活動，本地家庭喜歡這個活動，是因為它把美式汽車電影院的復古浪漫感帶到了購物中心停車場，每週主題不同（從歌舞片到大片應有盡有），加上完全免費，是預算有限又想要不一樣約會或親子體驗的選擇。",
    BT:"活動期間為2026年7月22日至9月2日，每週三日落後開演（具體時間隨季節調整），建議日落前30-45分鐘抵達找好停車位置。",
    IT:"提早抵達卡位 → 進mall買晚餐跟零食 → 回車上或步行區看電影。先把車停好佔位置，趁開演前還有時間進商場買晚餐或電影零食，再回到車上或步行區享受電影，這個順序避免了餓著肚子看兩小時電影的窘境，也省去額外開車覓食的麻煩。",
@@ -610,6 +513,415 @@ window.addEventListener("DOMContentLoaded", function () {
    N:"活動為年度限定（每年9月初），請以官方公告的具體場地與時間為準；部分展覽或演出可能需要事先報名或購票，建議出發前查詢官網節目表。此卡片透過一般搜尋而非確認的「Enjoy Vancouver」官網找到，資訊以官方公告為準。",
    Dt:"2026年9月5-7日",S:"一般搜尋 / TAIWANfest IG",L:"https://www.instagram.com/taiwanfest/",Map:"Vancouver Art Gallery, 750 Hornby Street, Vancouver, British Columbia, Canada",
    I:wm("The Vancouver Art Gallery (6912165519).jpg")}
+  /* ===== 2026/06/25 van.update ===== */
+  /* 逛街 3筆 */
+ ,{T:"White Rock 海濱小鎮散步",M:"weekend",C:"逛街",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"White Rock 是大溫最有「小城感」的海濱小鎮，標誌性的白色大石頭、全長470公尺的老木棧橋、還有沿海岸蔓延的冰淇淋店與咖啡廳。本地人喜歡這裡，是因為它離市區只要45分鐘車程，卻有種完全「出了城」的抽離感，尤其傍晚坐在棧橋邊看夕陽沉入 Semiahmoo Bay，是大溫數一數二的日落視角。",
+  BT:"建議下午3-4點出發：先沿 Marine Drive 逛獨立小店，再走棧橋到底等夕陽，最後在海邊找間餐廳收尾。週末停車建議停在 Johnston Road 一帶，避開棧橋入口的擁擠路段。",
+  P:"免費",N:"從市中心開車約45分鐘，或搭 SkyTrain 至 King George 站再轉 354 公車；棧橋為木板路面，建議穿平底鞋。",
+  Dt:"全年",S:"Vancouver Is Awesome",L:"https://www.whiterockcity.ca/",Map:"White Rock Pier, Marine Drive, White Rock, British Columbia, Canada",Img:"",Badge:"9/5-9/7"}
+ ,{T:"Steveston Village 漁港小鎮",M:"weekend",C:"逛街",R:"Richmond",Tr:"建議開車",W:"戶外",
+  F:"Steveston 是大溫保存最完整的漁港小鎮，至今仍有漁船直接在碼頭販售當天捕撈的鮮魚與蝦蟹。本地人喜歡這裡，是因為整條 Moncton Street 沒有連鎖店，只有獨立咖啡廳、手工藝品店和一棟棟百年木造倉庫，走在裡面像是掉進一個時間停止的漁村。",
+  BT:"建議上午11點前往：先逛 Moncton Street 小店，再去碼頭買現撈海鮮，下午參觀 Gulf of Georgia Cannery（持 Canada Strong Pass 至 9/7 免費入場）。7月1日加拿大國慶日還有 Salmon Festival 慶典，是最熱鬧的時機。",
+  P:"逛街免費；Gulf of Georgia Cannery 憑 Canada Strong Pass 免費（至2026/9/7）",N:"Canada Strong Pass 可至 Parks Canada 官網免費申請；碼頭鮮魚攤通常下午3點後就售完，建議早點到。",
+  Dt:"全年",S:"Vancouver Is Awesome / Parks Canada",L:"https://www.pc.gc.ca/en/lhn-nhs/bc/georgiann",Map:"Steveston Village, Steveston Highway, Richmond, British Columbia, Canada",Img:"",Badge:"7月系列"}
+ ,{T:"Lonsdale Quay Market 北岸市集與海景",M:"weekend",C:"逛街",R:"North Van",Tr:"大眾運輸",W:"戶外",
+  F:"Lonsdale Quay 是北溫的核心海濱市集，從溫哥華市中心搭 SeaBus 只需12分鐘，卻能一次同時得到「搭船的儀式感」和「從北岸回望溫哥華天際線」的絕佳角度。本地人喜歡這裡，是因為除了市場內的熟食和精品小店，碼頭外的海堤上坐著就是一整片 Downtown 夜景，不花門票錢。",
+  BT:"平日傍晚最推薦——人少、停車不用煩惱、而且是看溫哥華夕陽燈火漸亮的最佳時段；搭 SeaBus 從 Waterfront 站出發，12分鐘到，回程天黑前的末班船記得確認時間。",
+  P:"SeaBus 車票約$3.65起（Compass Card）；市集入場免費",N:"Lonsdale Quay Market 室內部分約傍晚6-7點關門，建議先逛市集再到戶外海堤坐看夜景。",
+  Dt:"全年",S:"Daily Hive",L:"https://www.lonsdalequay.com/",Map:"Lonsdale Quay Market, 123 Carrie Cates Court, North Vancouver, British Columbia, Canada",Img:"",Badge:"7月"}
+
+  /* Hiking 2筆 */
+ ,{T:"Lynn Canyon Park 免費吊橋 + 30-Foot Pool 游泳",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+  F:"Lynn Canyon 有一座完全免費的吊橋，懸在50公尺深的溪谷上空，穿越二手雨林，比 Capilano 的付費版更幽靜。夏天最受本地人歡迎的是橋後步道盡頭的「30-Foot Pool」——清涼山泉水潭、岩壁包圍的峽谷，是大溫最受歡迎的免費天然游泳點之一。",
+  BT:"建議週間前往，週末 30-Foot Pool 人潮極大；上午10點前到可停免費車位。游泳區水流較急，深水區請自行評估安全，不建議帶不諳水性的小孩單獨進入。",
+  P:"吊橋 + 步道 + 停車全免費",N:"天然水潭無救生員；岩石溼滑，入水請穿防滑涼鞋。",
+  Dt:"全年（夏季最佳）",S:"Vancouver Is Awesome",L:"https://www.lynncanyon.ca/",Map:"Lynn Canyon Park, 3663 Park Road, North Vancouver, British Columbia, Canada",Img:"",Badge:"每週五"}
+ ,{T:"Deer Lake Park 城市湖泊健走",M:"weeknight",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Deer Lake 是本拿比市中心一個被樹林環繞的城市湖泊，環湖步道約4公里，平坦好走。本地人喜歡這裡，是因為它離市區很近、停車方便，卻真的有進森林的感覺——尤其傍晚光線穿透樹梢打在湖面上的那一段，是溫哥華城區內難得的治癒系風景。",
+  BT:"平日傍晚5-7點最推薦，光線最美；環湖一圈約50-60分鐘，從 Shadbolt Centre 旁的入口起步，繞湖一圈回到出發點，不會走錯。夏天可以帶野餐墊在湖邊草地收尾。",
+  P:"免費",N:"停車場免費；步道全程平坦，適合各年齡層；湖邊部分路段偶有鵝群出沒，路過時保持距離即可。",
+  Dt:"全年",S:"City of Burnaby",L:"https://www.burnaby.ca/parks-recreation-and-culture/parks/deer-lake-park",Map:"Deer Lake Park, 6450 Deer Lake Avenue, Burnaby, British Columbia, Canada",Img:"",Badge:"夏季"}
+
+  /* 音樂 1筆 */
+ ,{T:"Vancouver Folk Music Festival 2026",M:"weekend",C:"音樂",R:"Others",Tr:"大眾運輸",W:"戶外",
+  F:"加拿大最具歷史的戶外音樂節之一，今年陣容亮點包含英國搖滾詩人 Billy Bragg、澳洲新興創作人 Hazlett，以及在地傳奇 Paul Pigat's Cousin Harley。Jericho Beach 的夕陽配上現場音樂，是溫哥華夏天最難複製的體驗。",
+  BT:"各舞台約從早上11點開始，多舞台並行可依曲風自由切換；週日下午是主舞台壓軸，人潮最多。建議搭 #4 或 #44 公車前往。",
+  P:"日票/全程票請查詢官網",N:"戶外場地，建議自備防曬、薄外套與折疊椅；禁止自帶酒精飲料入場。",
+  Dt:"2026年7月17-19日",S:"The Georgia Straight",L:"https://thefestival.bc.ca",Map:"Jericho Beach Park, 3941 Point Grey Road, Vancouver, British Columbia, Canada",Img:"",Badge:"7/17-7/19"}
+
+  /* 美食 2筆（Patio 推薦） */
+ ,{T:"Lift Bar and Grill – 煤港海景 Patio",M:"weekend",C:"美食",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Lift 坐落在 Coal Harbour 的水岸邊，擁有溫哥華少數能同時看到史丹利公園、遊艇碼頭與海岸山脈的露台。本地人喜歡這裡，是因為 heated rooftop patio 讓涼爽的夜晚也能坐到很晚，菜單上的生蠔與炸魚薯條配一杯 BC 白酒是公認的黃金組合。",
+  BT:"週間傍晚5-7點來最推薦：人少、位子好找、夕陽角度完美。假日建議提前訂位，旺季戶外席很搶手；Happy Hour 通常在週一至週五下午3-5點，飲料有折扣。",
+  P:"人均$40-70 CAD",N:"Patio 為有遮蓋加熱露台，天氣涼時帶件外套；從 Canada Place 沿海堤步行約10分鐘。",
+  Dt:"全年（夏季最佳）",S:"Daily Hive / Vancouver Magazine",L:"https://www.liftbarandgrill.com/",Map:"Lift Bar and Grill, 333 Menchions Mews, Vancouver, British Columbia, Canada",Img:"",Badge:"夏季週間"}
+ ,{T:"Joe Fortes – 天台花園 Patio",M:"weekend",C:"美食",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Joe Fortes 是溫哥華 Robson Street 一棟百年建築頂樓的天台花園餐廳，從街道上完全看不出來它的存在。餐廳以新鮮生蠔和海鮮著稱，天台種滿盆栽讓整個空間有一種城市裡的秘密花園感，是慶祝場合或特別紀念日的首選 Patio。",
+  BT:"建議週間晚餐時段（週二至週四）訂位最輕鬆。生蠔 Happy Hour 在週一至週五下午3-6點，$2/隻，是本地人最愛的下班小聚。夏天天台日落後也開著，可以點杯葡萄酒坐到晚上。",
+  P:"人均$50-90 CAD；Happy Hour 生蠔$2/隻",N:"天台 Patio 位子有限，強烈建議提前訂位；沒有訂到天台的話，室內同樣值得一去。",
+  Dt:"全年（夏季最佳）",S:"Daily Hive / OpenTable",L:"https://joefortes.ca/",Map:"Joe Fortes Seafood & Chop House, 777 Thurlow Street, Vancouver, British Columbia, Canada",Img:"",Badge:"夏季"}
+
+  /* 活動 2筆（新分類） */
+ ,{T:"Symphony in the Park – 免費夏日古典音樂夜",M:"weekend",C:"活動",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"每年夏天，溫哥華交響樂團（VSO）都會在 Deer Lake Park 的草坪上舉辦免費戶外音樂會，今年7月18日是「Symphony in the Park」、7月19日是「Opera in the Park」，完全免費，不需購票。本地人喜歡這個活動，是因為它讓你在湖邊草地鋪野餐墊、配點紅酒，就能享受現場管弦樂演出——是溫哥華夏天最有質感的免費體驗。",
+  BT:"7月18日（週六）正式演出7:30pm，建議下午3點提前到場：VSO 樂手會帶兒童認識各種管弦樂器，提前到的人也可以佔到湖邊最好的草坪位置。帶野餐墊、輕食、薄外套，完全不需要消費任何東西。",
+  P:"免費，不需購票",N:"停車位有限，或搭公車至 Kingsway & Buckingham。7月19日為 Opera in the Park，可連續兩天前往。",
+  Dt:"2026年7月18日（週六）7:30pm；7月19日（週日）Opera in the Park",S:"City of Burnaby / Vancouver Symphony Orchestra",L:"https://www.vancouversymphony.ca/event/symphony-in-the-park/",Map:"Deer Lake Park, 6450 Deer Lake Avenue, Burnaby, British Columbia, Canada",Img:""}
+ ,{T:"Steveston Salmon Festival – 加拿大國慶日漁村慶典",M:"weekend",C:"活動",R:"Richmond",Tr:"建議開車",W:"戶外",
+  F:"Steveston Salmon Festival 從1945年舉辦至今，是卑詩省歷史最悠久的加拿大國慶慶典之一，每年7月1日在 Steveston Village 舉行，有萬人早餐（免費鮭魚野外烤肉）、遊行、文化表演和漁村市集。本地人每年都來，是因為這個慶典保留了最樸實的社區感，不是商業化的煙火表演，而是真正屬於漁村社區的節慶。",
+  BT:"建議早上8-9點抵達參加 Salmon BBQ 早餐（免費鮭魚供應從早上8點開始，先到先得）；遊行通常在上午10點開始，沿 Moncton Street 進行。整個活動持續至下午，午後人潮最大。",
+  P:"免費",N:"7月1日全市慶典，Richmond/Steveston 一帶交通繁忙，建議提早出門；若開車建議停在 No.1 Road 一帶後步行進入。",
+  Dt:"2026年7月1日（加拿大國慶日）",S:"Vancouver Is Awesome",L:"https://www.stevestonsalmonfestival.ca/",Map:"Steveston Community Centre, 4111 Moncton Street, Richmond, British Columbia, Canada",Img:""}
+
+  /* ===== 2026/06/26 van.update ===== */
+  /* 逛街 3筆 */
+ ,{T:"Khatsahlano Street Party 2026 – 50個免費現場演出",M:"weekend",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Khatsahlano Street Party 是溫哥華規模最大的免費街頭音樂節，由 Zulu Records 策劃，每年封閉 W 4th Ave 十個街區，集結超過50組本地樂團同步演出。本地人喜歡這個活動，是因為它沒有商業贊助壓力，完全是本地獨立音樂的大集合，風格從 folk 到 punk 都有，逛街邊走邊聽一整天，完全免費。",
+  BT:"2026年7月11日（週六）早上11點至晚上9點，建議下午1-3點抵達人氣最旺的舞台；W 4th Ave 與 Burrard St 交叉口附近攤位最集中，從 Burrard 站步行可達。",
+  P:"免費",
+  N:"活動不提供固定停車場，強烈建議搭 SkyTrain 或公車；帶現金在小攤位消費更方便。",
+  Dt:"2026年7月11日（週六）11am-9pm",S:"Daily Hive",L:"https://dailyhive.com/vancouver/khatsahlano-street-party-2026",Map:"W 4th Avenue & Burrard Street, Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"Shipyards Night Market – 北溫週五夜市",Weekly:true,M:"weeknight",C:"逛街",R:"North Van",Tr:"大眾運輸",W:"戶外",
+  F:"Shipyards Night Market 在北溫 Lonsdale Quay 旁的 Shipbuilders' Square 舉行，每個週五開市，有百個以上的手工藝攤位、美食卡車、啤酒花園和現場音樂。本地人喜歡這裡，是因為整個夜市面對著 Burrard Inlet 和溫哥華天際線，是夏天週五下班後最完美的「不需要計劃的好去處」。",
+  BT:"每週五下午3點至10點，建議6-8點最熱鬧；從 Waterfront 站搭 SeaBus 12分鐘直達，下船步行5分鐘即到場地，回程記得確認末班 SeaBus 時間。",
+  P:"入場免費；啤酒花園另收費",
+  N:"夜市全季從5月至9月每週五舉行；2026年持續到9月11日。",
+  Dt:"每週五 3pm-10pm（至2026年9月11日）",S:"Vancouver Is Awesome",L:"https://shipyardsnightmarket.com/",Map:"Shipbuilders' Square, 125 Victory Ship Way, North Vancouver, British Columbia, Canada",Img:""}
+
+  /* Hiking 2筆 */
+ ,{T:"Norvan Falls 北溫深山瀑布健行",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+  F:"Norvan Falls 是北溫隱藏在 Lynn Headwaters Regional Park 深處的一道18公尺高瀑布，全程約11公里來回，沿途溪流與老熟林交替出現。本地人喜歡這條路線，是因為它比 Lynn Canyon 更原始幽靜，夏天水量最充沛，瀑布前的水聲和噴濺水氣讓人忘記自己還在大溫範圍內。",
+  BT:"建議上午9點前出發，來回約3-4小時，順路在 Lynn Valley Road 的咖啡廳補給後再上山。夏天瀑布前的水潭非常清涼，可帶備用衣物。",
+  P:"停車免費；步道免費",
+  N:"路程較長，建議攜帶2公升以上飲水與輕食；部分路段樹根裸露，穿登山鞋為宜。",
+  Dt:"全年（夏季最佳）",S:"Vancouver Trails",L:"https://www.vancouvertrails.com/trails/norvan-falls/",Map:"Lynn Headwaters Regional Park, Lynn Valley Road, North Vancouver, British Columbia, Canada",Img:"",Badge:"5-11月"}
+ ,{T:"Grouse Grind – 大溫最熱門的爬山挑戰",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+  F:"Grouse Grind 是全溫哥華最知名的體能挑戰步道，全長2.9公里、爬升853公尺，本地人暱稱它是「Mother Nature's Stairmaster」。這條步道每年吸引超過10萬人次挑戰，無論是跑山健將還是第一次爬山的上班族，都把完成一次 Grind 當作人生清單上必做的事。",
+  BT:"建議平日早上7-8點出發避開人潮（週末上午10點後隊伍會很長）；登頂後可搭纜車下山（需購買纜車票，約$20），或走旁邊的 BCMC Trail 免費下山。",
+  P:"步道免費；纜車下山約$20 CAD",
+  N:"只能上、不能下（Grind 為單向步道）；建議攜帶至少1.5公升飲水；穿登山鞋，濕天路面較滑。",
+  Dt:"2026年5月至11月（依官方開放公告）",S:"Vancouver Trails",L:"https://www.grousemountain.com/grouse-grind",Map:"Grouse Mountain, 6400 Nancy Greene Way, North Vancouver, British Columbia, Canada",Img:"",Badge:"5-11月"}
+
+  /* 音樂 1筆 */
+ ,{T:"FVDED in the Park 2026 – Fisher & Dom Dolla",M:"weekend",C:"音樂",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"FVDED in the Park 是大溫規模最大的戶外電子音樂節，2026年陣容包含澳洲 house 天王 Fisher 與 Dom Dolla，在 Surrey 的 Holland Park 搭建多個舞台。本地人從大溫各區涌入，是因為這個音樂節的舞台聲場和戶外氣氛是室內 club 無法複製的夏日電子體驗。",
+  BT:"2026年7月4日（週五）與7月5日（週六），各晚上3點開門；建議提早購票，門票通常在活動前數週售罄，旺季不要拖延。",
+  P:"門票請查詢官網（約$80-150 CAD）",
+  N:"Holland Park 在 Surrey，建議開車或於 Surrey Central Station 搭乘接駁巴士；禁止攜帶外食及酒精。",
+  Dt:"2026年7月4日（週五）、7月5日（週六）",S:"Daily Hive",L:"https://dailyhive.com/vancouver/fvded-in-the-park-2026",Map:"Holland Park, 13428 Old Yale Road, Surrey, British Columbia, Canada",Img:""}
+
+  /* 美食 2筆 */
+ ,{T:"Cardero's – 煤港碼頭現場音樂 Patio",M:"weekend",C:"美食",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Cardero's 坐落在 Coal Harbour 的碼頭邊，餐廳正面是私人遊艇停泊的港灣，天氣好時 Patio 前座能看到整片北岸山脈和停靠的帆船。每天下午都有現場演唱，是本地人喜歡「不用刻意安排就能有驚喜」的那種餐廳。",
+  BT:"建議提前網路訂位（露天 Patio 席最搶手）；下午3-6點 Happy Hour 飲料半價，新鮮生蠔和西岸鮭魚是招牌。從 Canada Place 沿海堤步行約5分鐘即到。",
+  P:"人均$35-60 CAD",
+  N:"停車位有限，建議搭 SkyTrain 至 Waterfront 站後步行，避免假日停車焦慮。",
+  Dt:"全年（夏季最佳）",S:"Vancouver Magazine / Daily Hive",L:"https://carderos.com/",Map:"Cardero's Restaurant, 1583 Coal Harbour Quay, Vancouver, British Columbia, Canada",Img:""}
+
+  /* 活動 2筆 */
+ ,{T:"FIFA Fan Festival 免費 World Cup 觀賽 – PNE Hastings Park",M:"weekend",C:"活動",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"2026 FIFA 世界盃在溫哥華舉辦6場比賽，PNE Hastings Park 內的 FIFA Fan Festival 是全球唯一的官方免費觀賽場地之一，有大型戶外螢幕、現場演出、美食攤位和互動體驗區。本地人喜歡這裡，是因為即使買不到球票，也能在這裡感受同款的現場氣氛，而且完全免費入場。",
+  BT:"入場免費，但建議提前在 FIFA 官網預約入場時段（熱門場次常需提前預約）；搭公車至 Renfrew Station 後步行可達。每個比賽日開幕前2小時開門，建議提早1-2小時到場佔位。",
+  P:"免費（提前預約）",
+  N:"Fan Festival 持續至2026年7月19日決賽日；部分演出或 VIP 區域需另行購票，免費入場僅限公共觀賽區。",
+  Dt:"2026年6月11日至7月19日（比賽日）",S:"FIFA / Destination Vancouver",L:"https://www.vancouverfwc26.ca/fifa-fan-festival",Map:"PNE Hastings Park, 2901 East Hastings Street, Vancouver, British Columbia, Canada",Img:""}
+
+
+  /* ===== 2026/06/29 van.update ===== */
+  /* 本週活動 3筆 */
+ ,{T:"Vancouver International Jazz Festival – 免費戶外音樂",M:"weekend",C:"活動",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"溫哥華爵士音樂節本週（6/29-7/5）進入尾聲最精彩的壓軸週，Granville Island、Gastown、David Lam Park 同步有免費戶外舞台演出，超過175場節目中大量都是完全不需要買票的街頭即興演出。",
+  BT:"每天下午至晚間皆有演出，建議下午4點後前往 Granville Island 的水岸舞台，或傍晚去 Gastown Jazz Zone 感受最有街頭氣氛的即興演奏；7月5日（週日）為最後一天。",
+  P:"戶外舞台免費；部分室內場次需購票",
+  N:"各場地節目時刻表請查官網；本週為最後一週，建議把握機會。",
+  Dt:"2026年6月29日至7月5日（本週末最後機會）",S:"Vancouver Jazz Festival",L:"https://www.coastaljazz.ca/",Map:"David Lam Park, 1300 Pacific Boulevard, Vancouver, British Columbia, Canada",Img:"",Badge:"6/26-7/5"}
+ ,{T:"Canada Day at Canada Place – 加拿大國慶40週年",M:"weekend",C:"活動",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"2026年是 Canada Place 舉辦國慶日慶典的第40週年，是溫哥華規模最大的7月1日免費慶典，上午11點至下午6點有原住民市集、Expo 86 紀念展、吉祥物表演和多位現場樂手演出。本地人把這裡當作家庭出遊的固定選擇。",
+  BT:"建議上午11點開門即到場搶佔海景位置；下午2-4點是主舞台最熱鬧時段，演出陣容包含 Rebecca Sichon、The Matinee、The Strumbellas 等。注意：溫哥華市中心當晚無煙火，想看煙火可前往白石或本拿比。",
+  P:"免費",
+  N:"Canada Place 周邊7月1日車流與人潮極大，強烈建議搭 SkyTrain 至 Waterfront 站；停車位基本不可能找到。",
+  Dt:"2026年7月1日（週三）11am-6pm",S:"Canada Place / Daily Hive",L:"https://www.canadaplace.ca/canadatogether",Map:"Canada Place, 999 Canada Place, Vancouver, British Columbia, Canada",Img:"",Badge:"7/1"}
+ ,{T:"Theatre Under the Stars – 露天音樂劇 Stanley Park",M:"weekend",C:"活動",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Theatre Under the Stars 是溫哥華最有儀式感的夏日傳統，自1940年代起在 Stanley Park 的 Malkin Bowl 露天劇場演出，今年帶來《Sister Act》和《Disney's The Little Mermaid》交替演出。坐在森林包圍的露天劇場看音樂劇，頭頂是樹梢和星空，是溫哥華夏天獨一無二的體驗。",
+  BT:"7月3日（週四）開幕，週一演出7pm、週二至週日8pm；建議提前網路訂位，熱門場次容易售罄。演出前可在 Stanley Park 散步當暖身，餐廳也有早餐預約套餐。",
+  P:"單張票$35-69 CAD；學生/青年有優惠",
+  N:"露天劇場，建議帶薄外套（夜間有海風）和小坐墊；演出期間禁止拍照錄影。",
+  Dt:"2026年7月3日至8月22日",S:"TUTS / Daily Hive",L:"https://www.tuts.ca/",Map:"Malkin Bowl, Stanley Park, Vancouver, British Columbia, Canada",Img:"",Badge:"7/3-8/22"}
+
+  /* 入門 Hiking 5筆 */
+ ,{T:"Rice Lake 環湖輕鬆步道 – 嬰兒車可推",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+  F:"Rice Lake 是北溫最容易走的湖邊步道之一，全程僅3公里、幾乎完全平坦，路面鋪設碎石，嬰兒車和輪椅均可通行。湖邊松林安靜、鳥鳴聲清晰，與鄰近熱門的 Lynn Canyon 相比幾乎沒有人潮，是本地親子家庭的口碑秘密基地。",
+  BT:"全年開放、免費入場；建議工作日早上前往，人最少、停車最方便。湖邊北端有野餐桌，帶三明治來坐著吃是標配動線。",
+  P:"免費",
+  N:"禁止攜帶狗進入（保護水源地）；停車場在 Lillooet Road 沿途，建議導航至 Seymour-Capilano 水處理廠旁的停車場。",
+  Dt:"全年",S:"Vancouver Trails",L:"https://www.vancouvertrails.com/trails/rice-lake/",Map:"Rice Lake, Lillooet Road, North Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"Sasamat Lake – 環湖步道 + 游泳沙灘",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Sasamat Lake 位於 Port Moody 的 Belcarra Regional Park 內，環湖步道3公里，全程平坦，穿越老熟林並走過一段浮橋，景色層次豐富。湖邊設有沙灘、更衣室，夏天可以直接下水游泳，是「健行 + 戲水」一次解決的完美一日行程。",
+  BT:"建議週間上午10點前到達（避開停車費啟動和人潮）；環湖約1小時，之後在沙灘休息或游泳；帶野餐食物和防曬，夏天湖邊氣溫舒適。",
+  P:"步道免費；停車費 4月至9月每日約$5-8 CAD（10am後啟動）",
+  N:"夏季週末人潮很大，停車位競爭激烈，建議工作日或早上8點前抵達；浮橋部分夏天會開放，請現場確認。",
+  Dt:"全年（夏季最佳）",S:"Vancouver Trails / Best Hikes BC",L:"https://www.vancouvertrails.com/trails/sasamat-lake/",Map:"Sasamat Lake, Belcarra Regional Park, Port Moody, British Columbia, Canada",Img:""}
+ ,{T:"Burnaby Lake 環湖健行 – 城市自然步道",M:"weeknight",C:"Hiking",R:"Others",Tr:"大眾運輸",W:"戶外",
+  F:"Burnaby Lake Regional Park 是大溫地區少見的城市平地自然保護區，環湖步道約10公里，但可以自由選擇只走一段。湖邊濕地是水鳥天堂，白鷺、鶴、野鴨常見，本地觀鳥愛好者和遛狗族是這裡的常客，完全平坦、無需任何登山裝備。",
+  BT:"平日傍晚最推薦（人少、鳥最活躍）；從 Production Way 或 Edmonds SkyTrain 站可步行或騎單車到達入口；帶望遠鏡的話觀鳥體驗更豐富。",
+  P:"免費",
+  N:"全程平坦，適合各年齡層；部分路段在雨季較泥濘，建議穿防水鞋；狗需繫牽繩。",
+  Dt:"全年",S:"City of Burnaby",L:"https://www.burnaby.ca/parks-recreation-and-culture/parks/burnaby-lake-regional-park",Map:"Burnaby Lake Regional Park, Piper Avenue, Burnaby, British Columbia, Canada",Img:""}
+ ,{T:"Baden Powell Trail – Quarry Rock 岩頂眺望",M:"weekend",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+  F:"Quarry Rock 是 Deep Cove 後山一個知名的岩石頂，只需步行約2公里即可抵達，站上岩頂可以俯瞰整個 Indian Arm 峽灣全景，是溫哥華「性價比最高」的景觀健行——路短、爬升不多（約140公尺），但視野堪比大步道。每個來溫哥華的外地人都被本地人帶去過。",
+  BT:"建議週間上午或下午早些前往；岩頂只有站立空間，周末往往人滿，平日體驗好很多。從 Deep Cove Park 入口出發，步道清晰好認，回程可以去 Honey's Doughnuts 買甜甜圈收尾。",
+  P:"免費",
+  N:"路面有根樹根和石頭，建議穿有抓地力的鞋；岩頂邊緣無護欄，帶小孩請抓緊手；停車場位於 Deep Cove Park Rd，假日常滿。",
+  Dt:"全年",S:"Vancouver Trails",L:"https://www.vancouvertrails.com/trails/quarry-rock/",Map:"Deep Cove Park, Deep Cove Road, North Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"Pitt Polder Ecological Reserve – 大草原棧道",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Pitt Polder 是溫哥華東部 Pitt Meadows 的一片大型濕地保護區，有一條完全平坦的木棧道和草原步道，可以遠眺金色草原、水鳥和遠方的 Golden Ears 雪山。這裡完全不像「登山」，更像是走進一幅水彩畫裡，是想「出城透氣又不用爬山」的最佳選擇。",
+  BT:"建議秋冬或春天前往（草原最美、候鳥最多）；夏天也適合，但蚊子較多建議帶防蚊液；從 Harris Road 停車場起步，沿棧道走即可，不會迷路。",
+  P:"免費",
+  N:"從溫哥華市區開車約45分鐘；夏天蚊蟲多，建議噴防蚊液並穿長褲；帶望遠鏡可以看到更多水鳥。",
+  Dt:"全年（春秋最佳）",S:"Vancouver Trails",L:"https://www.vancouvertrails.com/trails/pitt-polder/",Map:"Pitt Polder Ecological Reserve, Harris Road, Pitt Meadows, British Columbia, Canada",Img:""}
+
+
+  /* ===== 2026/06/29 van.update – 游泳 + 美景 ===== */
+
+  /* 游泳 5筆（全免費） */
+ ,{T:"English Bay Beach – 市中心海灘游泳",M:"weeknight",C:"游泳",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"English Bay 是溫哥華市中心最易達的海灘，沙灘長、面西日落角度完美，夏天水溫適宜游泳。平日傍晚是本地班族下班後直接換泳裝入水的最佳時機，週末人山人海，平日反而能佔到好位子。Health Canada 定期監測水質並公告。",
+  BT:"每天日出至日落免費開放；建議平日下午5-7點前往，光線最美且人最少。距 Burrard 或 Davie St 公車站步行約10分鐘。",
+  P:"免費",
+  N:"游泳前請查詢當天水質公告（City of Vancouver 官網）；禁止攜帶玻璃瓶入沙灘；無更衣室，需自備防水袋。",
+  Dt:"全年開放（夏季最佳）",S:"604 Now / Vancouver Is Awesome",L:"https://do604.com/p/cleanest-places-to-swim-vancouver",Map:"English Bay Beach, Beach Avenue, Vancouver, British Columbia, Canada",Img:"",Badge:"夏季開放"}
+ ,{T:"Third Beach – Stanley Park 最乾淨海灘游泳",M:"weekend",C:"游泳",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Third Beach 是根據 Health Canada 數據，溫哥華市內水質最乾淨的海灘之一，位於 Stanley Park 西側，人潮遠少於 English Bay，沙灘也更寬闊安靜。本地人把這裡視為「不想被觀光客打擾」的游泳首選。",
+  BT:"每天日出至日落免費開放；建議工作日下午前往，Stanley Park 內部停車有限，建議搭公車或騎單車。旁邊有小賣部可以買飲料和零食。",
+  P:"免費",
+  N:"游泳前請查詢當日水質公告（City of Vancouver 官網）；從 Stanley Park 入口步行約20分鐘，或開車至 Third Beach 停車場。",
+  Dt:"全年開放（夏季最佳）",S:"604 Now / Vancouver Is Awesome",L:"https://do604.com/p/cleanest-places-to-swim-vancouver",Map:"Third Beach, Stanley Park, Vancouver, British Columbia, Canada",Img:"",Badge:"夏季開放"}
+ ,{T:"Whytecliff Park – 西溫最清澈免費游泳灣",M:"weekend",C:"游泳",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Whytecliff Park 位於西溫哥華，是大溫地區水質最優的游泳地點之一（Health Canada 統計排名頂尖），小海灣地形讓水流穩定、能見度高，也是潛水愛好者的聖地。沙石灘入水口平緩，適合帶孩子或初學者。",
+  BT:"全天開放、免費入場；夏天上午10點前到達可免費停車（部分路邊位子），之後停車位競爭激烈；從 Horseshoe Bay 渡輪站開車約5分鐘。",
+  P:"免費（停車費視位子而定）",
+  N:"無救生員，游泳請自行評估水況；強風天浪大，不建議初學者入水；帶潛水裝備可以看到豐富海底生態。",
+  Dt:"全年開放（夏季最佳）",S:"604 Now / Vancouver Is Awesome",L:"https://do604.com/p/cleanest-places-to-swim-vancouver",Map:"Whytecliff Park, Marine Drive, West Vancouver, British Columbia, Canada",Img:"",Badge:"夏季開放"}
+ ,{T:"Jericho Beach – 沙灘游泳 + 山景",M:"weekend",C:"游泳",R:"Others",Tr:"大眾運輸",W:"戶外",
+  F:"Jericho Beach 擁有大溫最寬闊的沙灘之一，面向北岸山脈，水淺平緩，特別適合家庭和初學者游泳。沙灘後方有大片草地可以鋪野餐墊，是「游泳 + 野餐 + 看夕陽」一次完成的完美海灘。",
+  BT:"每天日出至日落免費開放；推薦下午3-7點前往，光線最美且水溫最高；停車場在 NW Marine Drive 旁，夏天週末下午常滿，建議搭 #4 或 #84 公車。",
+  P:"免費",
+  N:"游泳前請查詢當日水質公告；偶爾因水質問題暫時關閉，出發前確認；海灘禁帶狗（5月至9月）。",
+  Dt:"全年開放（夏季最佳）",S:"Vancouver Is Awesome",L:"https://www.vancouverisawesome.com/local-news/swimming-metro-vancouver-pools-lakes-beaches-12379195",Map:"Jericho Beach, NW Marine Drive, Vancouver, British Columbia, Canada",Img:"",Badge:"夏季開放"}
+ ,{T:"Sasamat Lake 白沙灘游泳 – Belcarra Park",M:"weekend",C:"游泳",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Sasamat Lake 是大溫地區最受歡迎的淡水游泳湖之一，White Pine Beach 的白色細沙灘讓人以為置身熱帶，湖水清澈且夏天水溫比海水暖許多。環湖步道3公里平坦好走，游完泳還可以繞湖散步，是一日遊最完整的選擇。",
+  BT:"建議工作日上午10點前抵達（週末停車位嚴重不足）；泳區有劃定範圍，夏天有救生員駐守，是大溫少有的有人看守淡水游泳點。",
+  P:"免費（停車費 4月至9月約$5-8/日，10am後開始收費）",
+  N:"夏季週末人潮極大，建議工作日前往；帶足防曬和飲水；部分停車位距離沙灘需步行10分鐘。",
+  Dt:"全年開放（夏季游泳最佳，6-9月）",S:"Vancouver Trails / Best Hikes BC",L:"https://www.vancouvertrails.com/trails/sasamat-lake/",Map:"White Pine Beach, Sasamat Lake, Belcarra Regional Park, Port Moody, British Columbia, Canada",Img:"",Badge:"6-9月"}
+
+  /* 美景 5筆 */
+ ,{T:"Burnaby Mountain 俯瞰全市天際線",M:"weeknight",C:"美景",R:"Others",Tr:"大眾運輸",W:"戶外",
+  F:"Burnaby Mountain Park 海拔370公尺，從山頂可以同時看到整個 East Vancouver 天際線、Burrard Inlet 海灣、北岸山脈和晴天時的 Mount Baker（美國境內）。這裡是溫哥華本地人公認最被低估的約會觀景點，比 Grouse Mountain 省錢、比 Vancouver Lookout 更有野味。",
+  BT:"建議日落前1小時抵達（夏天約8-9pm），可以一次看到金色夕陽轉藍調夜景的過渡；搭 SFU 公車（99B Line 轉接駁）可到山頂廣場，或開車停 Centennial Way 停車場免費。",
+  P:"免費",
+  N:"山頂風大，帶薄外套；秋冬霧多，建議查天氣預報確認能見度再出發；旁邊的圖騰柱廣場也很適合拍照。",
+  Dt:"全年",S:"Vancouver Is Awesome / Miss604",L:"https://www.burnaby.ca/parks-recreation-and-culture/parks/burnaby-mountain-conservation-area",Map:"Burnaby Mountain Park, Centennial Way, Burnaby, British Columbia, Canada",Img:""}
+ ,{T:"Cypress Lookout – 懸崖邊城市全景",M:"weeknight",C:"美景",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Cypress Lookout 位於通往 Cypress Mountain 滑雪場的山路上，無需健行就能在路邊停車點眺望整個溫哥華市區、Burrard Inlet 和遠方的 Mount Baker。這裡是本地攝影師和情侶最愛的夜景點之一，卻因為「要開車上山」而讓一般觀光客忽略，是名副其實的本地秘境。",
+  BT:"建議日落後30分鐘抵達看夜景（夏天約9-10pm出發），天氣晴朗時視野延伸超過100公里；從 West Vancouver 開車沿 Cypress Bowl Road 上山約15分鐘，路邊停車免費。",
+  P:"免費",
+  N:"山路彎道多，夜間駕駛需謹慎；冬天道路可能結冰；停車位有限，建議避開冬天滑雪季週末。",
+  Dt:"全年（夏秋能見度最佳）",S:"Wander Vancouver",L:"https://wandervancouver.com/cypress-mountain-viewpoint-west-vancouver/",Map:"Cypress Lookout, Cypress Bowl Road, West Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"Prospect Point – 獅門大橋最佳角度",M:"weekend",C:"美景",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Prospect Point 是 Stanley Park 的北端制高點，從這裡俯瞰 Lions Gate Bridge 橫跨 Burrard Inlet 的全景是溫哥華最經典的明信片構圖，同時還能看到遠洋貨輪和遊輪緩緩駛過橋下。本地人喜歡傍晚來這裡，橋上的燈光亮起那一刻是溫哥華最美的光景之一。",
+  BT:"全天開放、免費入場；日落前後最推薦，旁邊的 Prospect Point Bar & Grill 有提供餐飲；搭 #135 公車可直達，或從 Stanley Park 海堤單車騎行約20分鐘。",
+  P:"免費",
+  N:"停車場夏季收費且常滿，建議搭公車或騎單車前往；觀景台邊緣有護欄，帶小孩請注意。",
+  Dt:"全年",S:"Destination Vancouver",L:"https://www.destinationvancouver.com/inspirations/city/10-best-scenic-viewpoints-in-vancouver",Map:"Prospect Point, Stanley Park, Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"Capitol Hill Reservoir Park – 本拿比秘密天台",M:"weeknight",C:"美景",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Capitol Hill 是本拿比海拔203公尺的小山丘，頂部是一個幾乎被本地人壟斷的草坪觀景公園，不需要任何健行即可開車直達。從這裡可以同時看到 Metrotown 商業區天際線、Vancouver Downtown、North Shore 山脈，三個方向景色各異，是攝影師拍城市夜景的私房地點。",
+  BT:"建議平日傍晚或夜晚前往（週末偶有派對噪音）；開車沿 Howard Ave 上山，頂部有免費停車場；帶野餐墊在草坪看夜景是標準動線。",
+  P:"免費",
+  N:"山頂草坪無照明，夜間帶手電筒；蚊子較多，夏天建議帶防蚊液；停車場晚上無收費。",
+  Dt:"全年（秋冬空氣清澈能見度更好）",S:"In Love With BC",L:"https://inlovewithbc.com/best-viewpoints-in-vancouver/",Map:"Capitol Hill Reservoir Park, Howard Avenue, Burnaby, British Columbia, Canada",Img:""}
+ ,{T:"Queen Elizabeth Park 山頂花園美景",M:"weekend",C:"美景",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Queen Elizabeth Park 位於溫哥華最高點 Little Mountain（海拔167公尺），山頂花園可以俯瞰整個市區天際線和北岸山脈。公園以精心設計的花圃聞名，春天櫻花、夏天玫瑰，每個季節都有不同的花景作為城市全景的前景，是本地婚紗攝影的熱門取景點。",
+  BT:"全天開放、免費入場；建議上午或傍晚光線柔和時前往拍照；搭 #15 公車可達，或從 Cambie 街步行上山約20分鐘。Bloedel Conservatory 溫室在頂部（另收費）可在雨天進入。",
+  P:"公園免費；Bloedel Conservatory 溫室$7-8 CAD",
+  N:"週末停車困難，建議搭公車；山頂旁的 Seasons in the Park 餐廳可訂座享受有城市全景的室內用餐體驗。",
+  Dt:"全年",S:"Destination Vancouver",L:"https://www.destinationvancouver.com/inspirations/city/10-best-scenic-viewpoints-in-vancouver",Map:"Queen Elizabeth Park, 4600 Cambie Street, Vancouver, British Columbia, Canada",Img:""}
+
+
+  /* ===== 2026/06/29 van.update – 水上活動 / Bar / Clubbing / 新潮體驗 ===== */
+
+  /* 水上活動 4筆 */
+ ,{T:"Deep Cove Kayak – 新手皮划艇出發點",M:"weekend",C:"水上活動",R:"North Van",Tr:"建議開車",W:"戶外",
+  F:"Deep Cove Kayak Centre 是大溫最受歡迎的皮划艇出發點，位於 Indian Arm 峽灣入口，平靜水域讓新手能安心探索。每次出租前會附上免費基礎划槳教學，出發後能沿峽灣遠眺北岸森林，完全不需要任何經驗就能完成。",
+  BT:"建議工作日上午開始，避開週末人潮；強烈建議提前電話或網路預約。出發前先去 Honey's Doughnuts 買甜甜圈當早餐，回來剛好。",
+  P:"單人艇 $45/2小時；雙人艇 $69/2小時；SUP立槳 $45/2小時；全日租借另議",
+  N:"租借含槳、救生衣；出發前天氣/水況會影響開放，建議提前致電 604-929-2268 確認；預約制，旺季walk-in常客滿。",
+  Dt:"夏季每日（依天氣）約9am-6pm",S:"Deep Cove Kayak",L:"https://deepcovekayak.com/rental/kayak-rentals/",Map:"Deep Cove Kayak Centre, 2156 Banbury Road, North Vancouver, British Columbia, Canada",Img:"",Badge:"夏季"}
+ ,{T:"Jericho Beach Kayak Centre – 城市海灘出發",M:"weekend",C:"水上活動",R:"Others",Tr:"大眾運輸",W:"戶外",
+  F:"Jericho Sailing Centre 內的 Jericho Beach Kayak 是市區最易達的水上活動出發點，從這裡出發可以沿海岸線划向 Point Grey 或 Spanish Banks，北岸山脈就在眼前。適合第一次嘗試皮划艇又不想開車到北岸的城市人。",
+  BT:"夏季週間有 Midweek Special 週一至週三享 50% 折扣；建議下午前往，海面風浪小於早上；從 UBC 公車直達，或騎共享單車沿海堤前往。",
+  P:"皮划艇約 $30-45/2小時；SUP $25-35/2小時（週間特惠 5折）；請以官網最新價格為準",
+  N:"需填寫基本安全問卷；風速超標時可能暫停出租；含教學說明和救生衣；推薦4月至10月。",
+  Dt:"4月至10月，每日（依天氣）約9am-7pm",S:"Jericho Beach Kayak",L:"https://jerichobeachkayak.com/",Map:"Jericho Sailing Centre, 1300 Discovery Street, Vancouver, British Columbia, Canada",Img:"",Badge:"4-10月"}
+ ,{T:"False Creek Kayak – Olympic Village 市中心水上",M:"weeknight",C:"水上活動",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Creekside Community Centre 旁的 Creekside Kayaks 是市中心最方便的皮划艇出發點，在 False Creek 平靜內灣划行，兩側是奧運村、Granville Island 和科學館，下班後來一小時完全不需要開車。最適合「想玩水又懶得去北岸」的市區居民。",
+  BT:"平日傍晚最推薦，5-7pm 光線最美、水面最平靜；從 Olympic Village SkyTrain 站步行5分鐘。可租小時計費，不需要預約整個下午。",
+  P:"皮划艇約 $20-30/小時（單人）；雙人艇另議；請以場地最新公告為準",
+  N:"出租點在 Creekside Community Centre 水岸側；致電 604-688-2382 確認當天開放；False Creek 偶有快艇通過，注意水流變化。",
+  Dt:"夏季每日（依天氣）",S:"City of Vancouver / Creekside Kayaks",L:"https://vancouver.ca/parks-recreation-culture/paddling-and-boating.aspx",Map:"Creekside Community Centre, 1 Athletes Way, Vancouver, British Columbia, Canada",Img:"",Badge:"夏季"}
+ ,{T:"Windsure Jericho – 帆船 / 風帆 / SUP 入門",M:"weekend",C:"水上活動",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"Windsure 是溫哥華少有能在海邊同時玩帆船、風帆衝浪和 SUP 的場地，位於 Jericho Beach，背景是整片北岸山脈。對於想從 SUP 進階到帆船的人，這裡有完整的分級課程，本地人把這裡視為「人生中學會航海的地方」。",
+  BT:"週間優惠最划算（週一至週三）；初學者建議選 SUP 或入門帆船課，約2-3小時；帶泳衣和防曬，翻船是學帆船的必經過程。",
+  P:"SUP 租借約 $30/2小時（週間5折）；帆船入門課程約 $80-120 CAD；請以官網為準",
+  N:"帆船課需提前預約；學習帆船需多次課程才能獨立出海；SUP 可當天walk-in（旺季建議先電話確認）。",
+  Dt:"4月至10月，週間特惠 Mon-Wed",S:"Windsure Adventure Watersports",L:"https://www.windsure.com/",Map:"Windsure Adventure Watersports, 1300 Discovery Street, Vancouver, British Columbia, Canada",Img:"",Badge:"4-10月"}
+
+  /* Bar 4筆 */
+ ,{T:"The Keefer Bar – 北美最佳調酒吧 #7",M:"weekend",C:"Bar",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"The Keefer Bar 在 2026 年北美 50 大酒吧榜單奪下第 7 名，並蟬聯加拿大最佳酒吧，以中藥材和中式食材為靈感的雞尾酒是它的招牌。老店落腳在唐人街的百年建築裡，昏黃燈光和香料氣息讓整個空間像是穿越到另一個時代。",
+  BT:"建議平日晚上9點後前往人最少，週末建議訂位；招牌雞尾酒如 Jade Sling、Mao Tai Old Fashioned 是必點；最近 SkyTrain：Stadium-Chinatown 站（Expo Line）步行5分鐘。",
+  P:"調酒每杯 $18-24 CAD；無低消但建議選多杯搭配",
+  N:"週末座位競爭激烈，建議透過 Resy 訂位；19+ 場所需帶有效証件；也有戶外 Yard 空間（天氣好開放）。",
+  Dt:"Sun-Thu 4pm-1am；Fri-Sat 4pm-2am",S:"North America's 50 Best Bars 2026",L:"https://thekeeferbar.com/",Map:"The Keefer Bar, 135 Keefer Street, Vancouver, British Columbia, Canada",Img:"",Badge:"#1 加拿大"}
+ ,{T:"June on Cambie – 2026 新晉北美 #17 調酒吧",M:"weekend",C:"Bar",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"June 是 Keefer Bar 同一團隊在 2025 年開設的新店，以當季食材和植物性食材構建雞尾酒，上榜即排名北美第 17，是溫哥華近年最受矚目的新開酒吧。酒單每季更換，常見用上 BC 本地莓果、花卉和草本植物。",
+  BT:"建議提前預約，開業以來週末一位難求；最近 SkyTrain：King Edward 站（Canada Line）步行約10分鐘；適合想要「嚐最新潮調酒」的一夜。",
+  P:"調酒每杯 $18-26 CAD",
+  N:"以訂位制為主，walk-in 名額有限；菜單季節性更換，請以當天現場為準。",
+  Dt:"Tue-Sun 5pm-12am（請以官網最新公告為準）",S:"North America's 50 Best Bars 2026",L:"https://www.instagram.com/juneonmain/",Map:"June, Cambie Street, Vancouver, British Columbia, Canada",Img:"",Badge:"#17 北美"}
+ ,{T:"The Roxy – 每晚現場樂隊 + 舞池",M:"weekend",C:"Bar",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"The Roxy 是溫哥華 Granville Street 最具傳奇性的 live music bar，365 天每晚都有現場樂隊演出，從經典搖滾翻唱到當代 pop，下午9點不到就已開始暖場。本地人喜歡這裡，是因為它比 club 隨性、比純酒吧熱鬧，帶任何年齡的朋友來都可以一起跳舞唱歌。",
+  BT:"週四至週六是最熱鬧的夜晚，建議晚上9點後入場；封面收費較低但每晚不同，直接現場購票即可；最近 SkyTrain：Granville 站（Canada Line）出站步行1分鐘。",
+  P:"封面 $5-13 CAD（依日期）；飲料正常酒吧價格",
+  N:"19+ 場所需帶有效証件；Granville Street 週末人潮大，建議早點到不用排隊；現場排隊時段通常在 10pm-12am。",
+  Dt:"每日 8pm-3am",S:"The Roxy / Spotted by Locals",L:"http://www.roxyvan.com/",Map:"The Roxy, 932 Granville Street, Vancouver, British Columbia, Canada",Img:"",Badge:"每晚現場"}
+ ,{T:"The Fox Cabaret – East Van 獨立酒吧舞台",M:"weekend",C:"Bar",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"The Fox Cabaret 是東溫最受本地人喜愛的獨立表演空間，前身是一間老電影院，保留了復古紅絨舞台簾。這裡沒有連鎖酒吧的制式感，週間有現場 indie 演出、週末是 DJ 主題之夜，從 queer 夜到 soul 和 funk，客群是最有品味的本地年輕人。",
+  BT:"活動依週次不同，建議查官方 IG 或 do604 確認當週節目；最近 SkyTrain：Broadway-City Hall 站（Canada Line）轉 9 號公車約10分鐘；Mount Pleasant 最具代表性的夜晚去處。",
+  P:"封面依活動 $0-20 CAD",
+  N:"空間不大、氣氛親密，音樂聲大建議帶耳塞；不需訂位但熱門夜晚建議提前到；19+ 場所。",
+  Dt:"依活動排程（通常 Thu-Sat 9pm起）",S:"604 Now / Daily Hive",L:"https://do604.com/venues/the-fox-cabaret",Map:"The Fox Cabaret, 2321 Main Street, Vancouver, British Columbia, Canada",Img:""}
+
+  /* Clubbing 3筆 */
+ ,{T:"Fortune Sound Club – 溫哥華 Hip-Hop 聖地",M:"weekend",C:"Clubbing",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"Fortune Sound Club 是溫哥華最受尊重的 club，坐落在唐人街前中餐廳遺址，以 Funktion-One 頂級音響系統聞名，是全市最認真對待音樂本身的夜場。主打 Hip-Hop、R&B 和前衛電子音樂，Midnight Mondays 週一 R&B 之夜是本地忠實粉絲的必到行程。",
+  BT:"週一（R&B 之夜）和週五、週六是最熱鬧的場次；晚上10點後入場、高峰在凌晨12-2點；最近 SkyTrain：Stadium-Chinatown 站（Expo Line）步行3分鐘。",
+  P:"封面依活動 $10-25 CAD；VIP 桌訂位另議",
+  N:"19+ 帶有效証件；著裝要求：Smart Casual，避免運動鞋和球帽（依活動而定）；網上購票比現場排隊省時間。",
+  Dt:"Mon / Fri / Sat 10pm-2am",S:"Fortune Sound Club",L:"https://www.fortunesoundclub.com/",Map:"Fortune Sound Club, 147 East Pender Street, Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"Celebrities Nightclub – 最包容的舞池",M:"weekend",C:"Clubbing",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"Celebrities 是溫哥華 Davie Village 最具代表性的夜店，以 LGBTQ+ 友善和超級包容的氣氛著稱，但任何人都會在這裡找到歸屬感。音樂以 EDM、House 和 Top 40 為主，DJ 陣容包含本地和國際嘉賓，舞池能量是溫哥華 club 裡數一數二的。",
+  BT:"週五、週六是最熱鬧的夜晚，12am 後是高峰；最近 SkyTrain：Yaletown-Roundhouse 站（Canada Line）步行約10分鐘；搭 Davie St 公車更近；建議提前買票避免在場外排長龍。",
+  P:"封面 $15-30 CAD；依活動調整",
+  N:"19+ 帶有效証件；著裝 Smart Casual；場內服務員快、但建議少帶現金多用信用卡；週末凌晨 Uber 在 Davie St 很難叫，提前安排交通。",
+  Dt:"Fri-Sat 9pm-3am（特別活動另議）",S:"Destination Vancouver",L:"https://do604.com/venues/celebrities",Map:"Celebrities Nightclub, 1022 Davie Street, Vancouver, British Columbia, Canada",Img:"",Badge:"每週五六"}
+ ,{T:"The Red Room – 電子樂 / Latin 地下場",M:"weekend",C:"Clubbing",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"The Red Room 的標誌性設計是下沉式舞池配高台舞台，讓整個舞池的能量從四面八方湧來。音樂橫跨 Techno、House、Latin 和 Live Music，是最能找到本地 DJ 和小眾電子音樂的地下場，溫哥華認真聽電子音樂的人都知道這個地方。",
+  BT:"晚上10點後入場、凌晨12點後最熱；最近 SkyTrain：Yaletown-Roundhouse 站（Canada Line）步行5分鐘；Latin Night（通常週四或週五）是最受本地人歡迎的主題夜。",
+  P:"封面 $10-20 CAD；VIP 訂位另議",
+  N:"19+ 帶有效証件；Richards Street 停車費貴，建議搭 SkyTrain；場內小叫聲音大，建議帶耳塞作為護耳準備。",
+  Dt:"Thu-Sat 9pm-3am",S:"604 Now",L:"https://redroomvancouver.com/",Map:"The Red Room, 398 Richards Street, Vancouver, British Columbia, Canada",Img:""}
+
+  /* 新潮體驗 4筆 */
+ ,{T:"Forged Axe Throwing – 下班解壓神器",M:"weeknight",C:"新潮體驗",R:"North Van",Tr:"建議開車",W:"室內",
+  F:"斧頭投擲是近年溫哥華最火的下班社交活動，Forged Axe Throwing 在北溫，提供專業教練指導、多個投擲道，並有酒吧供應啤酒和飲料配合。不需要任何經驗，教練從零開始教你如何讓斧頭旋轉並命中靶心，通常1小時就能上手，非常適合生日聚會或同事 team building。",
+  BT:"建議平日晚上預約，週末人多建議提前1-2週訂位；一場約 60-90 分鐘，含教練全程指導；抵達前建議穿閉趾鞋（涼鞋不允許入內）。",
+  P:"約 $30-45 CAD/人/小時；含教練指導",
+  N:"年齡限制：通常需滿14歲或以上；禁穿涼鞋；飲酒後不可繼續投擲（場地規定）；建議提前網路預約。",
+  Dt:"每日開放（建議預約）",S:"Forged Axe",L:"https://www.forgedaxe.ca/",Map:"Forged Axe Throwing, 2 Lonsdale Avenue, North Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"戶外 Pickleball – 溫哥華最火新運動",M:"weeknight",C:"新潮體驗",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Pickleball 是介於網球和桌球之間的拍類運動，2024-2026年在北美颳起旋風，溫哥華本地人從退休族到20多歲年輕人全都愛上這個運動。入門超快（通常30分鐘就能打起來），場地費用低廉，Queen Elizabeth Park 有7個戶外場地是市內最集中的免費場地。",
+  BT:"平日傍晚5-8點最熱鬧（自由入場制）；建議帶自己的球拍（或場地附近有出租）；Queen Elizabeth Park 不需預約，先到先得；初學者直接去場邊等待，通常有人會邀請一起打。",
+  P:"場地免費；球拍出租約 $5-10 CAD",
+  N:"正式比賽場地需預約；運動裝束和運動鞋為佳；夏天場地搶手，建議工作日前往。",
+  Dt:"日出至日落，免費開放",S:"City of Vancouver / Apollo Pickleball",L:"https://vancouver.ca/parks-recreation-culture/pickleball.aspx",Map:"Queen Elizabeth Park Pickleball Courts, 4600 Cambie Street, Vancouver, British Columbia, Canada",Img:""}
+ ,{T:"Emeri Matcha – Main Street 抹茶新地標",M:"weeknight",C:"新潮體驗",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"Emeri 是出身 Vancouver 的抹茶品牌，創辦人試喝超過 300 款抹茶後精選出最高品質的日本茶農合作款，2026 年夏在 Main Street / Mount Pleasant 開設正式店面。抹茶拿鐵、抹茶提拉米蘇和限定抹茶甜點成為溫哥華年輕人 Instagram 的固定主角，是新一波「純喫茶文化」的代表地。",
+  BT:"建議平日上午11點至下午3點前往人最少；Main Street 本身就是很好逛的街區，可以搭配 Mount Pleasant 的獨立書店和選物店一起走；最近 SkyTrain：Broadway-City Hall 站（Canada Line）步行約10-15分鐘。",
+  P:"抹茶拿鐵約 $7-9 CAD；甜點約 $6-10 CAD",
+  N:"週末下午等位時間較長；請以官方 IG 確認最新營業時間和每日限定品項。",
+  Dt:"每日（依官網公告）約 10am-6pm",S:"Daily Hive / Noms Magazine",L:"https://www.instagram.com/emerimatcha/",Map:"Emeri Matcha, Main Street, Vancouver, British Columbia, Canada",Img:"",Badge:"2026新開"}
+ ,{T:"Dante's Golf Lounge – 喝酒打模擬高爾夫",M:"weeknight",C:"新潮體驗",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"Dante's Golf Lounge 是溫哥華最受追捧的室內高爾夫模擬器酒吧，提供 Foresight Golf 頂級模擬器，可以「打遍全球300多個知名球場」，邊喝精釀啤酒邊打球。不需要任何球技，開著最難的難度設定當搞笑娛樂也很受歡迎，是公司尾牙、約會或朋友聚會的熱門選擇。",
+  BT:"建議提前網路預約時段（每次1-2小時）；平日晚上比週末便宜；帶4-6人一起分攤費用最划算；建議穿輕便運動鞋以免打球不穩。",
+  P:"場地費約 $40-60 CAD/小時（整個模擬器間，可4-6人分攤）；飲料另計",
+  N:"場地數量有限，旺季提前1週預約；禁止自帶食物飲料；模擬器偶爾需要校準，staff 會協助處理。",
+  Dt:"每日開放（建議預約）約 11am-11pm",S:"Golf in British Columbia / Yelp",L:"https://www.instagram.com/dantesgolflounge/",Map:"Dante's Golf Lounge, Vancouver, British Columbia, Canada",Img:""}
+
+ /* ===== 2026/07/03 van.update ===== */
+ ,{T:"Water Street 行人徒步區 – Gastown 夏日逛街",M:"weekend",C:"逛街",R:"Downtown",Tr:"大眾運輸",W:"戶外",
+  F:"Gastown 的 Water Street 從 7 月 5 日起再度變身為行人徒步區，一路開放到 9 月初。整條石板街禁止車輛進入，餐廳酒吧把座位延伸到街上，蒸汽鐘、紅磚建築跟街頭表演全部步行可達，是本地人夏天最喜歡帶朋友逛的一段路。",
+  BT:"傍晚 5-8 點光線最美、氣氛最好；平日人潮比週末少，逛完可順路走到 Canada Place 看海。",
+  P:"免費",
+  N:"徒步區期間街上無車輛通行，但周邊停車位有限，強烈建議搭車前往（Waterfront 站步行 5 分鐘）。",
+  Dt:"2026/7/5 – 9/6 每日開放",S:"City of Vancouver / Miss604",L:"https://vancouver.ca/streets-transportation/water-street-pedestrian-zone.aspx",Map:"Water Street, Gastown, Vancouver, BC, Canada",
+  Img:"",Badge:"7/5 起"}
+ ,{T:"Trout Lake Farmers Market 週六農夫市集",M:"weekend",C:"逛街",R:"East Van",Tr:"大眾運輸",W:"戶外",
+  F:"Trout Lake 市集是溫哥華歷史最悠久的農夫市集之一，每週六在 John Hendry Park 開市，7 月正值 BC 櫻桃、藍莓跟桃子的產季高峰。本地人習慣先逛市集買水果麵包，再繞湖散步一圈，是東區最經典的週六早晨行程。",
+  BT:"上午 9-10 點到貨最齊全，熱門攤位（麵包、莓果）中午前常賣完；買完可直接在湖邊野餐。",
+  P:"免費入場",
+  N:"市集營運至 10 月中；建議自備購物袋，部分攤位僅收現金。",
+  Dt:"每週六 9am-2pm（至 10 月）",S:"Vancouver Farmers Markets (eatlocal.org)",L:"https://eatlocal.org/markets/trout-lake/",Map:"John Hendry Park, 3300 Victoria Dr, Vancouver, BC, Canada",
+  Img:"",Badge:"週六限定"}
+ ,{T:"Richmond Night Market 列治文夏日夜市",M:"weekend",C:"逛街",R:"Richmond",Tr:"大眾運輸",W:"戶外",
+  F:"北美規模最大的亞洲夜市，數百個小吃與雜貨攤位整個夏季週末營業。從烤魷魚、旋風薯塔到各種限定甜點，一路吃到底，加上遊戲攤跟舞台表演，是大溫夏夜最熱鬧的去處之一。",
+  BT:"開場後 1 小時內人最少；Bridgeport 站下車步行約 5 分鐘，比開車排隊停車省事得多。",
+  P:"入場門票數元起（可加購快速通關，以官網公告為準），小吃另計",
+  N:"熱門攤位排隊 20-30 分鐘屬正常；建議帶現金加快結帳速度。",
+  Dt:"2026 夏季週五至週日及假日傍晚營業（以官網時刻為準）",S:"Richmond Night Market 官網 / Daily Hive",L:"https://richmondnightmarket.com/",Map:"8351 River Road, Richmond, BC, Canada",
+  Img:"",Badge:"夏季限定"}
+ ,{T:"Dog Mountain 黃昏輕健行 – Mt Seymour",M:"weeknight",C:"Hiking",R:"North Van",Tr:"建議開車",W:"戶外",
+  F:"Dog Mountain 是本地人公認 CP 值最高的黃昏步道：來回只有約 5 公里、爬升不到 150 公尺，終點岩台卻能一次看到整個市中心、Stanley Park 跟菲沙河谷。夏天很多人專程上來看夕陽，天氣好時連溫哥華島的山影都看得到。",
+  BT:"日落前 1.5-2 小時從 Mt Seymour 停車場出發最從容；夏季七月日落約 9 點，下班後出發也來得及。",
+  P:"免費",
+  N:"回程天色暗得快，務必攜帶頭燈；步道多樹根與石塊，建議穿抓地力好的鞋。",
+  Dt:"夏季每日開放（建議傍晚前往）",S:"Vancouver Trails / Oceanus Adventure",L:"https://www.vancouvertrails.com/trails/dog-mountain/",Map:"Mount Seymour Provincial Park, North Vancouver, BC, Canada",
+  Img:"",Badge:""}
+ ,{T:"St. Mark's Summit 夕陽觀景健行 – Cypress",M:"weekend",C:"Hiking",R:"Others",Tr:"建議開車",W:"戶外",
+  F:"沿著 Howe Sound Crest Trail 走到 St. Mark's Summit，懸崖觀景點正對整個 Howe Sound 峽灣與島嶼群，是大溫最經典的夕陽健行路線。7 月積雪已完全融化，是一年中最適合走這條路線的季節。",
+  BT:"來回約 11 公里、爬升約 570 公尺，需 4 小時左右；想看夕陽建議下午 4-5 點從 Cypress 滑雪場停車場起登。",
+  P:"免費",
+  N:"回程務必帶頭燈與保暖層；懸崖邊緣無護欄，拍照請保持距離。",
+  Dt:"夏季每日開放（7-10 月為最佳季節）",S:"Vancouver Trails / AllTrails",L:"https://www.vancouvertrails.com/trails/st-marks-summit/",Map:"Cypress Mountain, West Vancouver, BC, Canada",
+  Img:"",Badge:""}
+ ,{T:"The Head and The Heart – Orpheum 劇院現場",M:"weeknight",C:"音樂",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"西雅圖獨立民謠代表樂團 The Head and The Heart 巡演來到溫哥華，場地選在 1927 年開業、金碧輝煌的 Orpheum 劇院。他們的合聲與弦樂編制在這種老劇院的音場裡特別動人，本地樂迷把這場視為七月最值得進場的演出之一。",
+  BT:"7/8（週三）晚上 8 點開演；Granville 站步行 3 分鐘即達，開演前可先在 Granville St 吃晚餐。",
+  P:"票價依座位而定（Ticketmaster 售票）",
+  N:"熱門場次建議提早購票；劇院內飲料可帶入座位。",
+  Dt:"2026/7/8（三）8:00pm",S:"Ticketmaster / vancouver-theatre.com",L:"https://www.ticketmaster.ca/discover/vancouver",Map:"Orpheum Theatre, 601 Smithe St, Vancouver, BC, Canada",
+  Img:"",Badge:"7/8"}
+ ,{T:"Kits Point Patio Party – 太空館戶外派對",M:"weeknight",C:"美食",R:"Others",Tr:"大眾運輸",W:"戶外",
+  F:"H.R. MacMillan 太空館前廣場夏季變身戶外 Patio Party：餐車、飲品攤加上現場音樂，就在 Vanier Park 草坪旁，走幾步就是 Kits Beach 海景。本地人喜歡下班後過來，吃完剛好接著在海邊看日落。",
+  BT:"傍晚時段氣氛最好；吃完往海邊走 10 分鐘就是 Kitsilano Beach，可以一路坐到天黑。",
+  P:"免費入場，餐飲另計",
+  N:"舉辦日期以太空館官網公告為準，出發前建議先確認當週場次。",
+  Dt:"2026 夏季指定週五傍晚（7/3 起，以官網為準）",S:"H.R. MacMillan Space Centre / Miss604",L:"https://www.spacecentre.ca/kits-point-patio-party-2026/",Map:"H.R. MacMillan Space Centre, 1100 Chestnut St, Vancouver, BC, Canada",
+  Img:"",Badge:"夏季週五"}
+ ,{T:"Tap & Barrel Bridges – Granville Island 河畔 Patio",M:"weekend",C:"美食",R:"Others",Tr:"大眾運輸",W:"戶外",
+  F:"Granville Island 上那棟顯眼的黃色建築就是 Bridges，被 Daily Hive 選入 2026 年溫哥華必去 Patio 清單。它擁有全城數一數二大的戶外座位區，正對 False Creek 水面與市中心天際線，主打 BC 精釀啤酒與在地酒莊酒單。",
+  BT:"夏季傍晚是黃金時段，建議 5 點前入座卡位看夕陽；搭 False Creek 小渡輪過去比開車找車位輕鬆。",
+  P:"主餐約 $20-35 CAD，飲品另計",
+  N:"旺季 Patio 座位不接受全席預訂，熱門時段需現場候位。",
+  Dt:"每日營業（以官網時刻為準）",S:"Daily Hive Dished 2026 Patio 清單",L:"https://tapandbarrel.com/",Map:"Bridges, 1696 Duranleau St, Granville Island, Vancouver, BC, Canada",
+  Img:"",Badge:""}
+ ,{T:"Vancouver Comic Arts Festival 漫畫藝術節",M:"weekend",C:"活動",R:"Downtown",Tr:"大眾運輸",W:"室內",
+  F:"VanCAF 是加拿大西岸最大的免費漫畫藝術節，7/4-7/5 在 Yaletown 的 Roundhouse 社區中心舉行。上百位獨立漫畫家與插畫家擺攤，加上工作坊、講座跟現場繪畫，不論是想挖獨立誌還是找原創印刷品都很好逛。",
+  BT:"週六上午開場人潮較少、限量商品最齊；Yaletown-Roundhouse 站出站即達。",
+  P:"免費入場",
+  N:"熱門攤位的限量印刷品週六就可能售完；多數攤主接受電子支付但備些現金更保險。",
+  Dt:"2026/7/4（六）– 7/5（日）",S:"Roundhouse / Miss604",L:"https://www.roundhouse.ca/event/vancouver-comic-arts-festival/2026-07-04/",Map:"Roundhouse Community Arts & Recreation Centre, 181 Roundhouse Mews, Vancouver, BC, Canada",
+  Img:"",Badge:"7/4-7/5"}
+ ,{T:"Carnaval del Sol 拉丁美洲文化節",M:"weekend",C:"活動",R:"East Van",Tr:"大眾運輸",W:"戶外",
+  F:"太平洋西北地區最大的拉丁美洲節慶，7/10-7/12 在 Mount Pleasant 的 Jonathan Rogers Park 登場，超過 350 位藝術家帶來三天的現場音樂、舞蹈、足球與街頭美食。整個公園變成拉丁嘉年華，氣氛熱烈到完全不像在溫哥華。",
+  BT:"週六 11am-10pm 全天最精彩；傍晚主舞台的樂團與舞蹈演出是重頭戲，建議下午進場先吃一輪再看表演。",
+  P:"門票 $15 起（時段票價以官網為準）",
+  N:"園區內美食攤以現金與卡片皆可；週五場次 5:30pm 才開始，別太早到。",
+  Dt:"2026/7/10（五）– 7/12（日）",S:"Georgia Straight / Carnaval del Sol 官網",L:"https://www.carnavaldelsol.ca/",Map:"Jonathan Rogers Park, 110 W 7th Ave, Vancouver, BC, Canada",
+  Img:"",Badge:"7/10-7/12"}
+
+
   ];
 
   var curMode = "all";
@@ -648,6 +960,16 @@ window.addEventListener("DOMContentLoaded", function () {
     tbdg.className = "tbdg";
     tbdg.textContent = d.M === "weeknight" ? "平日晚上" : "假日";
     ci.appendChild(tbdg);
+
+    if (d.Badge) {
+      var dbdg = document.createElement("div");
+      dbdg.className = "dbdg";
+      dbdg.textContent = d.Badge;
+      ci.appendChild(dbdg);
+    }
+    if (d.Weekly) {
+      card.dataset.weekly = "true";
+    }
 
     card.appendChild(ci);
 
@@ -750,6 +1072,12 @@ window.addEventListener("DOMContentLoaded", function () {
     return card;
   }
 
+  // Sort: newest first, Weekly pinned to top
+  DATA.reverse();
+  DATA.sort(function(a, b) {
+    return (b.Weekly ? 1 : 0) - (a.Weekly ? 1 : 0);
+  });
+
   function render() {
     var container = document.getElementById("cards");
     container.innerHTML = "";
@@ -816,3 +1144,4 @@ window.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
