@@ -10,10 +10,11 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --blk:#111;--wht:#fff;--cream:#F9F6F0;--gray:#F0F0F0;--mid:#CCC;--drk:#555;
-  --serif:"Playfair Display",serif;--sans:"Inter","Helvetica Neue",sans-serif
+  --serif:"Playfair Display",serif;--sans:"Inter","Helvetica Neue",sans-serif;
+  --pad-x:20px;--maxw:700px
 }
-body{font-family:var(--sans);background:var(--wht);color:var(--blk);max-width:700px;margin:0 auto;padding:0 20px}
-.topbar{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--blk);padding:14px 0;margin:0 -20px;padding-left:20px;padding-right:20px}
+body{font-family:var(--sans);background:var(--wht);color:var(--blk);max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x)}
+.topbar{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--blk);padding:14px var(--pad-x);margin:0 calc(var(--pad-x) * -1)}
 .brand{font-family:var(--serif);font-size:1.4rem;font-weight:900;letter-spacing:.08em;margin-bottom:10px}
 .tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tabs::-webkit-scrollbar{display:none}
@@ -21,6 +22,8 @@ body{font-family:var(--sans);background:var(--wht);color:var(--blk);max-width:70
 .tab.active{color:#fff;background:var(--blk);border-color:var(--blk)}
 .cnt-row{font-size:.65rem;color:var(--drk);margin-top:8px;letter-spacing:.05em}
 .cnt-row strong{color:var(--blk)}
+.region-sticky{position:sticky;z-index:90;background:#fff;margin:0 calc(var(--pad-x) * -1);padding:10px var(--pad-x) 8px;border-bottom:1px solid var(--gray)}
+.region-sticky .fg{margin-bottom:0}
 .filterbar{padding:12px 0;border-bottom:1px solid var(--gray);margin-bottom:16px}
 .fg{margin-bottom:8px}
 .fl{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--drk);font-weight:600;display:block;margin-bottom:5px}
@@ -42,6 +45,13 @@ body{font-family:var(--sans);background:var(--wht);color:var(--blk);max-width:70
 @media(max-width:760px){
   .rec-row{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
   .rec-row>.rec-card{flex:0 0 82%;scroll-snap-align:start}
+}
+@media(min-width:900px){
+  :root{--pad-x:32px;--maxw:1200px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 24px}
+  .card{border:1px solid var(--gray);border-radius:10px;padding:18px;height:100%}
+  .card:hover{border-color:var(--mid)}
+  .empty{grid-column:1/-1}
 }
 .ph-emo{font-size:2.6rem;opacity:.5;line-height:1}
 .bdg{position:absolute;top:8px;left:8px;background:#fff;font-size:.55rem;letter-spacing:.08em;padding:3px 8px;font-weight:700;border-radius:3px}
@@ -86,7 +96,7 @@ footer{border-top:1px solid var(--blk);padding:24px 0;margin-top:20px;text-align
   <div class="cnt-row">共 <strong id="cnt">0</strong> 個行程</div>
 </header>
 
-<div class="filterbar">
+<div class="region-sticky" id="regionSticky">
   <div class="fg">
     <span class="fl">地區</span>
     <div class="chiprow">
@@ -98,6 +108,9 @@ footer{border-top:1px solid var(--blk);padding:24px 0;margin-top:20px;text-align
       <button class="chip" data-f="region" data-v="Others">其他</button>
     </div>
   </div>
+</div>
+
+<div class="filterbar">
   <div class="fg">
     <span class="fl">類型</span>
     <div class="chiprow">
@@ -519,6 +532,18 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   render();
+
+  function syncStickyTop() {
+    var topbar = document.querySelector(".topbar");
+    var region = document.getElementById("regionSticky");
+    if (topbar && region) region.style.top = topbar.offsetHeight + "px";
+  }
+  syncStickyTop();
+  window.addEventListener("load", syncStickyTop);
+  window.addEventListener("resize", syncStickyTop);
+  if (window.ResizeObserver) {
+    new ResizeObserver(syncStickyTop).observe(document.querySelector(".topbar"));
+  }
 
 });
 </script>
