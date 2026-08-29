@@ -42,6 +42,10 @@ body{font-family:var(--sans);background:var(--wht);color:var(--blk);max-width:va
 .rec-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .rec-card{border:1px solid var(--mid);border-radius:8px;padding:12px;background:#fff}
 .hot{display:inline-block;margin-left:8px;background:#1f7a4d;color:#fff;font-size:.52rem;letter-spacing:.06em;padding:2px 6px;border-radius:3px;font-weight:700;white-space:nowrap}
+.scope-tag{font-size:.58rem;letter-spacing:.05em;padding:3px 9px;border-radius:10px;font-weight:700;white-space:nowrap}
+.scope-week{background:#e74c3c;color:#fff}
+.scope-future{background:#f39c12;color:#fff}
+.scope-long{background:#8a8a8a;color:#fff}
 @media(max-width:760px){
   .rec-row{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
   .rec-row>.rec-card{flex:0 0 82%;scroll-snap-align:start}
@@ -143,6 +147,14 @@ footer{border-top:1px solid var(--blk);padding:24px 0;margin-top:20px;text-align
       <button class="chip" data-f="weather" data-v="戶外">戶外</button>
     </div>
   </div>
+  <div class="fg">
+    <span class="fl">時效</span>
+    <div class="chiprow">
+      <button class="chip active" data-f="scope" data-v="all">全部</button>
+      <button class="chip" data-f="scope" data-v="當週">當週活動</button>
+      <button class="chip" data-f="scope" data-v="長期">長期活動</button>
+    </div>
+  </div>
 </div>
 
 <div class="rec-wrap">
@@ -155,7 +167,7 @@ footer{border-top:1px solid var(--blk);padding:24px 0;margin-top:20px;text-align
 <footer>
   <div class="fb">出去玩最開心</div>
   <div class="fn">圖片來源：City of Vancouver 官方網站 · Wikimedia Commons ｜ 活動資訊來源：City of Vancouver · BC Hydro · City of Burnaby · Daily Hive · Miss604 · 604 Now · Vancouver Is Awesome · Curiocity</div>
-  <div class="fn" style="margin-top:4px">最後更新：2026-08-28</div>
+  <div class="fn" style="margin-top:4px">最後更新：2026-08-29</div>
 </footer>
 
 <script>
@@ -182,7 +194,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "604 Now",
     "L": "https://do604.com",
     "Map": "Lonsdale Quay Market, 123 Carrie Cates Court, North Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lonsdale%20Ave%20North%20Vancouver%20BC.JPG"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lonsdale%20Ave%20North%20Vancouver%20BC.JPG",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Commercial Drive 街區散步",
@@ -198,7 +212,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Daily Hive",
     "L": "https://dailyhive.com/vancouver",
     "Map": "Commercial Drive, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Commercial%20Drive%20(8110991970).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Commercial%20Drive%20(8110991970).jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Vancouver Lookout 觀景台夜景",
@@ -214,7 +230,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Tourism Vancouver",
     "L": "https://vancouverlookout.com",
     "Map": "Vancouver Lookout, 555 West Hastings Street, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Downtown%20from%20Port%20Vancouver%20-%20panoramio.jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Downtown%20from%20Port%20Vancouver%20-%20panoramio.jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Chinatown 街區夜遊",
@@ -230,7 +248,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "604 Now",
     "L": "https://vancouverchinatown.ca",
     "Map": "Chinatown, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver's%20Chinatown%20at%20night.%20(15234326238).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver's%20Chinatown%20at%20night.%20(15234326238).jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Bowen Island 渡輪傍晚",
@@ -246,7 +266,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Daily Hive",
     "L": "https://www.bcferries.com",
     "Map": "Snug Cove, Bowen Island, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Bowen%20Island%20from%20Murrays%20Beach.jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Bowen%20Island%20from%20Murrays%20Beach.jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Harbour Green Park 海港夜景",
@@ -262,7 +284,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Tourism Vancouver",
     "L": "https://vancouver.ca/parks",
     "Map": "Harbour Green Park, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Coal%20Harbour%20Community%20Centre%2C%20Vancouver%20(2012).JPG"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Coal%20Harbour%20Community%20Centre%2C%20Vancouver%20(2012).JPG",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Steveston Village 漁村老街",
@@ -279,7 +303,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Daily Hive",
     "L": "https://www.richmond.ca/steveston",
     "Map": "Steveston Village, Richmond, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Statues%20in%20front%20of%20the%20Cannery%20(6865002524).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Statues%20in%20front%20of%20the%20Cannery%20(6865002524).jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Fort Langley 歷史小鎮一日遊",
@@ -295,7 +321,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Daily Hive",
     "L": "https://www.pc.gc.ca/fortlangley",
     "Map": "Fort Langley National Historic Site, Fort Langley, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Langley%20Community%20Hall.jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Langley%20Community%20Hall.jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Sunshine Coast / Gibsons 渡輪小旅行",
@@ -311,7 +339,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Daily Hive",
     "L": "https://www.bcferries.com",
     "Map": "Gibsons, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20Gibsons%20from%20Mt.%20Elphinstone.jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20of%20Gibsons%20from%20Mt.%20Elphinstone.jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Bowen Island 島嶼半日逃離",
@@ -327,7 +357,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Daily Hive",
     "L": "https://www.bcferries.com",
     "Map": "Bowen Island, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Bowen%20Island%20from%20Murrays%20Beach.jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Bowen%20Island%20from%20Murrays%20Beach.jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Chinatown 文化散步與孫中山庭園",
@@ -343,7 +375,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "604 Now",
     "L": "https://vancouverchinatown.ca",
     "Map": "Dr. Sun Yat-Sen Classical Chinese Garden, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver's%20Chinatown%20at%20night.%20(15234326238).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver's%20Chinatown%20at%20night.%20(15234326238).jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Vancouver Art Gallery 最新特展",
@@ -359,7 +393,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "604 Now",
     "L": "https://www.vanartgallery.bc.ca",
     "Map": "Vancouver Art Gallery, 750 Hornby Street, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Vancouver%20Art%20Gallery%20(6912165519).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Vancouver%20Art%20Gallery%20(6912165519).jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Good Thief 越南風雞尾酒吧",
@@ -375,7 +411,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Curiocity Vancouver",
     "L": "https://www.goodthief.ca",
     "Map": "3336 Main Street, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/2414%20Main%20Street%20Vancouver.JPG"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/2414%20Main%20Street%20Vancouver.JPG",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Time Out Market Vancouver 美食市集",
@@ -391,7 +429,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Daily Hive",
     "L": "https://www.timeout.com/vancouver",
     "Map": "Oakridge Park, 650 West 41st Avenue, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Oakridge%20Centre%20Food%20Court%202018.jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Oakridge%20Centre%20Food%20Court%202018.jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Sphere Coffee Bar Cambie精品咖啡",
@@ -407,7 +447,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Nomsmagazine",
     "L": "https://nomsmagazine.com",
     "Map": "5898 Cambie Street, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Cambie%20street.jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Cambie%20street.jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Dimsum Caddy 飲茶加室內高爾夫",
@@ -423,7 +465,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Curiocity Vancouver",
     "L": "https://do604.com",
     "Map": "Richmond, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Statues%20in%20front%20of%20the%20Cannery%20(6865002524).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Statues%20in%20front%20of%20the%20Cannery%20(6865002524).jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "SUNWAVE 2026 戶外電子音樂系列",
@@ -442,7 +486,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Museum%20of%20Vancouver%20neon%20exhibit.jpg",
     "MT": "House · Techno · Electronic",
     "Price": "約 $25-45（依場次）",
-    "Badge": "6-8月多場次"
+    "Badge": "6-8月多場次",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Lansdowne Centre 免費露天電影之夜",
@@ -459,7 +505,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "Miss604",
     "L": "https://lansdowne-centre.com/drive-in-summer-series/",
     "Map": "Lansdowne Centre, 5300 Number 3 Road, Richmond, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Statues%20in%20front%20of%20the%20Cannery%20(6865002524).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Statues%20in%20front%20of%20the%20Cannery%20(6865002524).jpg",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "TAIWANfest 加拿大台灣文化節 2026",
@@ -475,7 +523,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "S": "一般搜尋 / TAIWANfest IG",
     "L": "https://www.instagram.com/taiwanfest/",
     "Map": "Vancouver Art Gallery, 750 Hornby Street, Vancouver, British Columbia, Canada",
-    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Vancouver%20Art%20Gallery%20(6912165519).jpg"
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Vancouver%20Art%20Gallery%20(6912165519).jpg",
+    "Scope": "未來",
+    "SortDate": "2026-09-05"
   },
   {
     "T": "White Rock 海濱小鎮散步",
@@ -494,7 +544,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "White Rock Pier, Marine Drive, White Rock, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Robson%20Street%20%26%20Howe%20Street%20(33813625284).jpg",
     "P": "免費",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Steveston Village 漁港小鎮",
@@ -514,7 +566,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Steveston-boats.jpg",
     "P": "逛街免費；Gulf of Georgia Cannery 憑 Canada Strong Pass 免費（至2026/9/7）",
     "Badge": "7月系列",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Lonsdale Quay Market 北岸市集與海景",
@@ -534,7 +588,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/North%20Vancouver%20Canada.JPG",
     "P": "SeaBus 車票約$3.65起（Compass Card）；市集入場免費",
     "Badge": "7月",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Lift Bar and Grill – 煤港海景 Patio",
@@ -553,7 +609,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20(BC%2C%20Canada)%2C%20Brockton%20Point%20Lighthouse%20--%202022%20--%202050.jpg",
     "P": "人均$40-70 CAD",
     "Badge": "夏季週間",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Joe Fortes – 天台花園 Patio",
@@ -572,7 +630,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lost%20Lagoon%20-%20Stanley%20Park%20-%20Vancouver-%20BC%20-%20Canada%20(8604929154).jpg",
     "P": "人均$50-90 CAD；Happy Hour 生蠔$2/隻",
     "Badge": "夏季",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Shipyards Night Market – 北溫週五夜市",
@@ -593,7 +653,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Shipbuilders' Square, 125 Victory Ship Way, North Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/North%20Vancouver%20Canada.JPG",
     "P": "入場免費；啤酒花園另收費",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Cardero's – 煤港碼頭現場音樂 Patio",
@@ -611,7 +673,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Cardero's Restaurant, 1583 Coal Harbour Quay, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20(BC%2C%20Canada)%2C%20Brockton%20Point%20Lighthouse%20--%202022%20--%202050.jpg",
     "P": "人均$35-60 CAD",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "English Bay Beach – 市中心海灘游泳",
@@ -630,7 +694,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://vancouver.ca/images/cov/icons/english-bay-large-icon.jpg",
     "P": "免費",
     "Badge": "夏季開放",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Third Beach – Stanley Park 最乾淨海灘游泳",
@@ -649,7 +715,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20(BC%2C%20Canada)%2C%20Stanley%20Park%2C%20The%20Port%20of%20Vancouver%20Lookout%20--%202022%20--%202057.jpg",
     "P": "免費",
     "Badge": "夏季開放",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Whytecliff Park – 西溫最清澈免費游泳灣",
@@ -668,7 +736,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
     "P": "免費（停車費視位子而定）",
     "Badge": "夏季開放",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Jericho Beach – 沙灘游泳 + 山景",
@@ -687,7 +757,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://vancouver.ca/images/cov/icons/jericho-beach-restored-large-icon.jpg",
     "P": "免費",
     "Badge": "夏季開放",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Sasamat Lake 白沙灘游泳 – Belcarra Park",
@@ -706,7 +778,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://vancouver.ca/images/cov/icons/third-Beach-large.jpg",
     "P": "免費（停車費 4月至9月約$5-8/日，10am後開始收費）",
     "Badge": "6-9月",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Burnaby Mountain 俯瞰全市天際線",
@@ -724,7 +798,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Burnaby Mountain Park, Centennial Way, Burnaby, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
     "P": "免費",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Cypress Lookout – 懸崖邊城市全景",
@@ -742,7 +818,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Cypress Lookout, Cypress Bowl Road, West Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
     "P": "免費",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Prospect Point – 獅門大橋最佳角度",
@@ -760,7 +838,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Prospect Point, Stanley Park, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20(BC%2C%20Canada)%2C%20Stanley%20Park%2C%20The%20Port%20of%20Vancouver%20Lookout%20--%202022%20--%202057.jpg",
     "P": "免費",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Capitol Hill Reservoir Park – 本拿比秘密天台",
@@ -778,7 +858,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Capitol Hill Reservoir Park, Howard Avenue, Burnaby, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
     "P": "免費",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Queen Elizabeth Park 山頂花園美景",
@@ -796,7 +878,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Queen Elizabeth Park, 4600 Cambie Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lost%20Lagoon%20-%20Stanley%20Park%20-%20Vancouver-%20BC%20-%20Canada%20(8604929154).jpg",
     "P": "公園免費；Bloedel Conservatory 溫室$7-8 CAD",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Deep Cove Kayak – 新手皮划艇出發點",
@@ -815,7 +899,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Gallant%20Wharf%2C%20Deep%20Cove%2C%20Vancouver.jpg",
     "P": "單人艇 $45/2小時；雙人艇 $69/2小時；SUP立槳 $45/2小時；全日租借另議",
     "Badge": "夏季",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Jericho Beach Kayak Centre – 城市海灘出發",
@@ -834,7 +920,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://vancouver.ca/images/cov/icons/jericho-beach-restored-large-icon.jpg",
     "P": "皮划艇約 $30-45/2小時；SUP $25-35/2小時（週間特惠 5折）；請以官網最新價格為準",
     "Badge": "4-10月",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "False Creek Kayak – Olympic Village 市中心水上",
@@ -853,7 +941,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20-%20False%20Creek%20near%20Granville%20Island%2001.jpg",
     "P": "皮划艇約 $20-30/小時（單人）；雙人艇另議；請以場地最新公告為準",
     "Badge": "夏季",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Windsure Jericho – 帆船 / 風帆 / SUP 入門",
@@ -872,7 +962,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://vancouver.ca/images/cov/icons/jericho-beach-restored-large-icon.jpg",
     "P": "SUP 租借約 $30/2小時（週間5折）；帆船入門課程約 $80-120 CAD；請以官網為準",
     "Badge": "4-10月",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "The Keefer Bar – 北美最佳調酒吧 #7",
@@ -891,7 +983,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20Chinatown%2017.JPG",
     "P": "調酒每杯 $18-24 CAD；無低消但建議選多杯搭配",
     "Badge": "#1 加拿大",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "June on Cambie – 2026 新晉北美 #17 調酒吧",
@@ -910,7 +1004,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20BC.JPG",
     "P": "調酒每杯 $18-26 CAD",
     "Badge": "#17 北美",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "The Roxy – 每晚現場樂隊 + 舞池",
@@ -929,7 +1025,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20BC.JPG",
     "P": "封面 $5-13 CAD（依日期）；飲料正常酒吧價格",
     "Badge": "每晚現場",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "The Fox Cabaret – East Van 獨立酒吧舞台",
@@ -947,7 +1045,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "The Fox Cabaret, 2321 Main Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20BC.JPG",
     "P": "封面依活動 $0-20 CAD",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Fortune Sound Club – 溫哥華 Hip-Hop 聖地",
@@ -965,7 +1065,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Fortune Sound Club, 147 East Pender Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
     "P": "封面依活動 $10-25 CAD；VIP 桌訂位另議",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Celebrities Nightclub – 最包容的舞池",
@@ -984,7 +1086,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
     "P": "封面 $15-30 CAD；依活動調整",
     "Badge": "每週五六",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "The Red Room – 電子樂 / Latin 地下場",
@@ -1002,7 +1106,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "The Red Room, 398 Richards Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
     "P": "封面 $10-20 CAD；VIP 訂位另議",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Forged Axe Throwing – 下班解壓神器",
@@ -1020,7 +1126,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Forged Axe Throwing, 2 Lonsdale Avenue, North Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/MUJI%20-%20Robson%20Street%20(28420071839).jpg",
     "P": "約 $30-45 CAD/人/小時；含教練指導",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "戶外 Pickleball – 溫哥華最火新運動",
@@ -1038,7 +1146,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Queen Elizabeth Park Pickleball Courts, 4600 Cambie Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/MUJI%20-%20Robson%20Street%20(28420071839).jpg",
     "P": "場地免費；球拍出租約 $5-10 CAD",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Emeri Matcha – Main Street 抹茶新地標",
@@ -1057,7 +1167,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20Park%20-%20North%20Vancouver%203.JPG",
     "P": "抹茶拿鐵約 $7-9 CAD；甜點約 $6-10 CAD",
     "Badge": "2026新開",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Dante's Golf Lounge – 喝酒打模擬高爾夫",
@@ -1075,7 +1187,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Dante's Golf Lounge, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/MUJI%20-%20Robson%20Street%20(28420071839).jpg",
     "P": "場地費約 $40-60 CAD/小時（整個模擬器間，可4-6人分攤）；飲料另計",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Gastown Sunday Set – Water Street 週日封街",
@@ -1097,7 +1211,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20BC.JPG",
     "P": "免費",
     "Badge": "每週日",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Trout Lake Farmers Market 週六農夫市集",
@@ -1116,7 +1232,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20Park%20-%20North%20Vancouver%203.JPG",
     "P": "免費入場",
     "Badge": "每週六",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Richmond Night Market 列治文夏日夜市",
@@ -1135,7 +1253,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Steveston-boats.jpg",
     "P": "入場門票數元起（可加購快速通關，以官網公告為準），小吃另計",
     "Badge": "至 9/20",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Kits Point Patio Party – 太空館戶外派對",
@@ -1154,7 +1274,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://vancouver.ca/images/cov/icons/people-kitsilano-beach-large-icon.jpg",
     "P": "免費入場，餐飲另計",
     "Badge": "夏季週五",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Tap & Barrel Bridges – Granville Island 河畔 Patio",
@@ -1173,7 +1295,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Giants%20public%20art%20mural%20on%20Granville%20Island.jpg",
     "P": "主餐約 $20-35 CAD，飲品另計",
     "Badge": "",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Burnaby Artisan Farmers Market 週六市集",
@@ -1184,7 +1308,7 @@ window.addEventListener("DOMContentLoaded", function () {
     "W": "戶外",
     "F": "本拿比市政廳廣場的週六農夫市集，每年夏天營運到 8 月底。在地小農蔬果、手工烘焙、現做熱食與手作攤位齊聚，規模比 Trout Lake 小但人潮更從容，是本拿比居民的週六晨間儀式。",
     "IT": "搭 SkyTrain 到 Lougheed Town Centre 站直接抵達 → 上午10-11點先逛 Grande Promenade 的生鮮與手作攤位，人最少 → 邊聽現場表演邊在 Promenade Patio 收尾",
-    "N": "2026年只開到8月29日，每週六 10am-2pm；地點在 The City of Lougheed 的 Grande Promenade，不是 Deer Lake 那一場，別跑錯。",
+    "N": "2026年只開到8月29日，每週六 10am-2pm；地點在 The City of Lougheed 的 Grande Promenade，不是 Deer Lake 那一場，別跑錯。（本季最後一場，就是今天！）",
     "Dt": "每週六 10am-2pm（至 8/29）",
     "S": "Artisan Farmers Markets / Vancouver's Best Places",
     "L": "https://www.artisanmarkets.ca/",
@@ -1192,7 +1316,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
     "P": "免費入場",
     "Badge": "每週六",
-    "Img": ""
+    "Img": "",
+    "Scope": "當週",
+    "SortDate": "2026-08-29"
   },
   {
     "T": "Reflections – Rosewood Hotel Georgia 屋頂花園 Patio",
@@ -1211,7 +1337,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lost%20Lagoon%20-%20Stanley%20Park%20-%20Vancouver-%20BC%20-%20Canada%20(8604929154).jpg",
     "P": "調酒約 $20 起、小食 $15-40",
     "Badge": "夏季限定",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Minami 隱藏花園 Patio – Yaletown 炙燒壽司",
@@ -1230,7 +1358,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lost%20Lagoon%20-%20Stanley%20Park%20-%20Vancouver-%20BC%20-%20Canada%20(8604929154).jpg",
     "P": "午餐約 $30-50 / 晚餐約 $60 起",
     "Badge": "夏季限定",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Evo Summer Cinema 免費露天電影 – Stanley Park",
@@ -1250,7 +1380,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20(BC%2C%20Canada)%2C%20Stanley%20Park%2C%20The%20Port%20of%20Vancouver%20Lookout%20--%202022%20--%202057.jpg",
     "P": "免費（草坪席先到先得）",
     "Badge": "每週二",
-    "Img": ""
+    "Img": "",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Cinema Sul Corso – Commercial Drive 週日露天電影",
@@ -1268,7 +1400,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://thedrive.ca/cinema/",
     "Map": "Kitchener Piazza, 1399 Commercial Drive, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20Park%20-%20North%20Vancouver%203.JPG",
-    "Badge": "每週日 免費"
+    "Badge": "每週日 免費",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "PNE Fair 2026 – 夏末大型遊樂園嘉年華",
@@ -1287,7 +1421,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://www.pne.ca/",
     "Map": "PNE, 2901 East Hastings Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
-    "Badge": "8/22 開幕"
+    "Badge": "8/22 開幕",
+    "Scope": "當週",
+    "SortDate": "2026-08-29"
   },
   {
     "T": "Vanier Park 三館 自由定價星期日",
@@ -1304,7 +1440,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://dailyhive.com/vancouver/vancouver-attractions-discount-admission",
     "Map": "Vanier Park, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20Plaza%2010.jpg",
-    "Badge": "每月首個週日"
+    "Badge": "每月首個週日",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Downtown Farmers Market 市中心週三農夫市集",
@@ -1322,7 +1460,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://eatlocal.org/markets/downtown/",
     "Map": "West Georgia Street & Hornby Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Robson%20Street%20%26%20Howe%20Street%20(33813625284).jpg",
-    "Badge": "每週三"
+    "Badge": "每週三",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "New West Farmers Market 新西敏週四市集",
@@ -1340,7 +1480,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://newwestfarmers.ca/",
     "Map": "Tipperary Park, 315 Queens Avenue, New Westminster, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
-    "Badge": "每週四"
+    "Badge": "每週四",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Stanley Park Mini Golf 期間限定迷你高爾夫",
@@ -1359,7 +1501,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://www.stanleyparkminigolf.com/",
     "Map": "690 Pipeline Road, Stanley Park, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20(BC%2C%20Canada)%2C%20Stanley%20Park%2C%20The%20Port%20of%20Vancouver%20Lookout%20--%202022%20--%202057.jpg",
-    "Badge": "2026 新設"
+    "Badge": "2026 新設",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Graze 南格蘭佛週四生鮮快閃",
@@ -1377,7 +1521,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://www.southgranville.org/summer",
     "Map": "South Granville Plaza East, West 14th Avenue, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Giants%20public%20art%20mural%20on%20Granville%20Island.jpg",
-    "Badge": "每週四"
+    "Badge": "每週四",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Le Picnic by Veuve Clicquot – JW 17樓空中花園",
@@ -1394,7 +1540,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "L": "https://dailyhive.com/vancouver/vancouver-events-august-2026",
     "Map": "JW Marriott Parq Vancouver, 39 Smithe Street, Vancouver, British Columbia, Canada",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lost%20Lagoon%20-%20Stanley%20Park%20-%20Vancouver-%20BC%20-%20Canada%20(8604929154).jpg",
-    "Badge": "至 8/31"
+    "Badge": "至 8/31",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Robson Square 免費戶外交誼舞之夜",
@@ -1414,7 +1562,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "800 Robson St, Vancouver, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Robson%20Square%20Vancouver%2004.JPG",
     "P": "免費",
-    "Badge": "每週五"
+    "Badge": "每週五",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Burnaby Summer Cinema 免費露天電影",
@@ -1436,7 +1586,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Civic Square, 6100 Willingdon Ave, Burnaby, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
     "P": "免費",
-    "Badge": "8月週五六"
+    "Badge": "8月週五六",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Science World 週二延長開放 Twilight Tuesdays",
@@ -1456,7 +1608,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "1455 Quebec St, Vancouver, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20-%20False%20Creek%20near%20Granville%20Island%2001.jpg",
     "P": "5pm 後折扣入場：成人／長者／青少年 $18.95+稅、3-12 歲 $14.95+稅；2 歲以下免費",
-    "Badge": "每週二"
+    "Badge": "每週二",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Big Splash Water Park 夏季滑水樂園",
@@ -1475,7 +1629,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "4775 Nulelum Way, Tsawwassen, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20-%20False%20Creek%20near%20Granville%20Island%2001.jpg",
     "P": "全日票 $43；Twilight 票（3pm 起）$34；3 歲以下由付費成人陪同免費",
-    "Badge": "至 9/7"
+    "Badge": "至 9/7",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Kitsilano Beach – 本地人最愛的免費海灘",
@@ -1494,7 +1650,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Kitsilano Beach, Cornwall Ave & Yew St, Vancouver, BC",
     "I": "https://vancouver.ca/images/cov/icons/people-kitsilano-beach-large-icon.jpg",
     "P": "免費",
-    "Badge": "官方救生員"
+    "Badge": "官方救生員",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Spanish Banks – 退潮走進海裡的免費海灘",
@@ -1513,7 +1671,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Spanish Banks Beach, Northwest Marine Dr, Vancouver, BC",
     "I": "https://vancouver.ca/images/cov/icons/spanish-bank-east-large.jpg",
     "P": "免費",
-    "Badge": "可帶狗"
+    "Badge": "可帶狗",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Locarno Beach – 最安靜的免費海灘",
@@ -1532,7 +1692,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Locarno Beach, Northwest Marine Dr, Vancouver, BC",
     "I": "https://vancouver.ca/images/cov/icons/locarno-beach-large.jpg",
     "P": "免費",
-    "Badge": "安靜海灘"
+    "Badge": "安靜海灘",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Second Beach – Stanley Park 免費沙灘",
@@ -1551,26 +1713,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Second Beach, Stanley Park Dr & N Lagoon Dr, Vancouver, BC",
     "I": "https://vancouver.ca/images/cov/icons/second-beach-large.jpg",
     "P": "海灘免費（Second Beach Pool 另外收費）",
-    "Badge": "市中心可達"
-  },
-  {
-    "T": "Trout Lake Beach – 全市唯一淡水湖海灘",
-    "U": "2026-08-23",
-    "M": "weeknight",
-    "C": "游泳",
-    "R": "Downtown",
-    "Tr": "大眾運輸",
-    "W": "戶外",
-    "F": "在 John Hendry Park 裡的 Trout Lake，是溫哥華九座市府海灘中唯一的淡水湖。East Van 居民夏天下班後會直接騎車過來跳下去，湖水比海水溫暖很多，不會冷到吸氣。旁邊就是週六農夫市集的場地，一年四季都很有社區感。",
-    "IT": "搭公車到 Victoria Dr 夾 E 19th Ave 步行 3 分鐘到湖南岸沙灘 → 傍晚 6-8 點下水，水溫比海邊舒服很多 → 上岸繞湖走一圈約 20 分鐘 → 走到 Commercial Drive 吃晚餐收尾",
-    "N": "⚠️ VCH 2026/8/5 起發布「不適合游泳」警示：30天幾何平均 201 E.coli/100mL（標準為 200），暫緩下水，出發前務必查 VCH 最新狀態。公園、農夫市集、環湖步道不受影響，仍可正常前往。大雨後 48 小時內不建議下水。",
-    "Dt": "全年開放；2026 年起無救生員配置",
-    "S": "Vancouver Coastal Health (VCH)",
-    "L": "https://www.vch.ca/en/service/public-beach-water-quality",
-    "Map": "Trout Lake Beach, John Hendry Park, Victoria Dr & E 19th Ave, Vancouver, BC",
-    "I": "https://vancouver.ca/images/cov/icons/trout-lake-large-icon.jpg",
-    "P": "免費",
-    "Badge": "⚠️水質警示中"
+    "Badge": "市中心可達",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Buntzen Lake – 山中免費湖泳（需預約停車）",
@@ -1589,7 +1734,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Buntzen Lake Recreation Area, Anmore, BC",
     "I": "https://vancouver.ca/images/cov/icons/third-Beach-large.jpg",
     "P": "入場與停車證皆免費（停車須事先線上預約）",
-    "Badge": "需預約停車"
+    "Badge": "需預約停車",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Vancouver Canadians 八月主場 – Nat Bailey 棒球夜",
@@ -1611,7 +1758,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Cambie%20street.jpg",
     "P": "門票 $24 起",
     "B": "場內新開幕 Triple O's at The Nat：招牌 Triple-O 醬漢堡、Dippin' Chicken 雞柳、Kennebec 薯條、手工奶昔",
-    "Badge": "煙火夜"
+    "Badge": "煙火夜",
+    "Scope": "當週",
+    "SortDate": "2026-08-29"
   },
   {
     "T": "Port Day at Canada Place – 海港開放日（Canada Place 40 週年）",
@@ -1631,7 +1780,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Coal%20Harbour%20Community%20Centre%2C%20Vancouver%20(2012).JPG",
     "P": "免費",
     "B": "Helijet 體驗區：Averill Creek 酒莊 BC 葡萄酒與 Hornby Island 精釀啤酒 flight（付費）",
-    "Badge": "8/29"
+    "Badge": "8/29",
+    "Scope": "當週",
+    "SortDate": "2026-08-29"
   },
   {
     "T": "Brewery and the Beast – 肉食與精釀啤酒祭",
@@ -1650,7 +1801,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Concord Pacific Place, 811 Carrall St, Vancouver, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20Plaza%2010.jpg",
     "P": "Main Event $179.95、VIP $299.95（另加稅費）",
-    "Badge": "8/30"
+    "Badge": "8/30",
+    "Scope": "當週",
+    "SortDate": "2026-08-30"
   },
   {
     "T": "North Delta Market – 三角洲週六社區市集",
@@ -1669,7 +1822,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "North Delta Recreation Centre, 11415 84 Ave, Delta, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
     "P": "免費入場",
-    "Badge": "隔週六"
+    "Badge": "隔週六",
+    "Scope": "未來",
+    "SortDate": "2026-09-05"
   },
   {
     "T": "Bard on the Beach 2026 – 莎士比亞海濱劇場節",
@@ -1687,7 +1842,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Sen̓áḵw/Vanier Park, 1695 Whyte Ave, Vancouver",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Lost%20Lagoon%20-%20Stanley%20Park%20-%20Vancouver-%20BC%20-%20Canada%20(8604929154).jpg",
     "P": "從 $30 起",
-    "U": "2026-08-18"
+    "U": "2026-08-18",
+    "Scope": "當週",
+    "SortDate": "2026-08-29"
   },
   {
     "T": "Burnaby Central Railway 迷你蒸汽鐵路",
@@ -1705,7 +1862,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "120 N Willingdon Ave., Burnaby, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
     "P": "$4.50/趟",
-    "U": "2026-08-18"
+    "U": "2026-08-18",
+    "Scope": "長期",
+    "SortDate": "9999-12-31"
   },
   {
     "T": "Renfrew Ravine Moon Festival 月亮藝術節",
@@ -1723,7 +1882,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Renfrew Ravine Park, Renfrew-Collingwood, Vancouver",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20Park%20-%20North%20Vancouver%203.JPG",
     "P": "免費",
-    "U": "2026-08-18"
+    "U": "2026-08-18",
+    "Scope": "未來",
+    "SortDate": "2026-09-07"
   },
   {
     "T": "Word Vancouver 免費文學節 – BC 最大文學盛會",
@@ -1741,7 +1902,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "UBC Robson Square, 800 Robson St, Vancouver",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Robson%20Square%20Vancouver%2004.JPG",
     "P": "免費",
-    "U": "2026-08-18"
+    "U": "2026-08-18",
+    "Scope": "未來",
+    "SortDate": "2026-09-19"
   },
   {
     "T": "PNE Summer Night Concerts – Earth, Wind & Fire",
@@ -1759,7 +1922,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "2901 E Hastings St, Vancouver, BC V5K 5J1",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
     "P": "$49+（含 PNE Fair 入場）",
-    "U": "2026-08-22"
+    "U": "2026-08-22",
+    "Scope": "當週",
+    "SortDate": "2026-09-04"
   },
   {
     "T": "PNE Summer Night Concerts – Sarah McLachlan",
@@ -1777,7 +1942,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "2901 E Hastings St, Vancouver, BC V5K 5J1",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Museum%20of%20Vancouver%20neon%20exhibit.jpg",
     "P": "$49+（含 PNE Fair 入場）",
-    "U": "2026-08-22"
+    "U": "2026-08-22",
+    "Scope": "未來",
+    "SortDate": "2026-09-06"
   },
   {
     "T": "PNE Summer Night Concerts – Boy George & Culture Club",
@@ -1795,7 +1962,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "2901 E Hastings St, Vancouver, BC V5K 5J1",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20BC.JPG",
     "P": "$49+（含 PNE Fair 入場）",
-    "U": "2026-08-22"
+    "U": "2026-08-22",
+    "Scope": "未來",
+    "SortDate": "2026-09-07"
   },
   {
     "T": "Car Free Day – Commercial Drive 封街派對",
@@ -1814,7 +1983,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Commercial Drive, Vancouver, BC (Venables to Napier)",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Commercial%20Drive%20(8110991970).jpg",
     "P": "免費",
-    "U": "2026-08-22"
+    "U": "2026-08-22",
+    "Scope": "未來",
+    "SortDate": "2026-09-05"
   },
   {
     "T": "Fringe Patio 免費音樂 – Granville Island Labour Day 週末",
@@ -1832,7 +2003,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Ocean Artworks, 1334 Johnston St, Vancouver, BC V6H 3R9",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville_Island_Vancouver_01.JPG",
     "P": "免費",
-    "U": "2026-08-22"
+    "U": "2026-08-22",
+    "Scope": "未來",
+    "SortDate": "2026-09-05"
   },
   {
     "T": "Vancouver Fringe Festival 2026 – 42 屆獨立表演藝術節",
@@ -1850,7 +2023,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Granville Island & various venues, Vancouver, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville_Island_Vancouver_01.JPG",
     "P": "$16+ 起（部分戶外 Patio 免費）",
-    "U": "2026-08-22"
+    "U": "2026-08-22",
+    "Scope": "未來",
+    "SortDate": "2026-09-10"
   },
   {
     "T": "Recovery Day BC 2026 – 全球最大康復嘉年華",
@@ -1868,7 +2043,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "New Westminster, BC（確切地點請見活動官網）",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20dusk%20pano.jpg",
     "P": "免費",
-    "U": "2026-08-22"
+    "U": "2026-08-22",
+    "Scope": "未來",
+    "SortDate": "2026-09-12"
   },
   {
     "T": "Car Free Day – Burnaby Edmonds 封街嘉年華",
@@ -1886,7 +2063,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Edmonds St (between Kingsway and Mary Ave), Burnaby, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
     "P": "免費",
-    "U": "2026-08-28"
+    "U": "2026-08-28",
+    "Scope": "當週",
+    "SortDate": "2026-08-30"
   },
   {
     "T": "VPL 秋季二手書拍賣 – 5萬冊 $2 起",
@@ -1904,7 +2083,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Vancouver Public Library Central Branch, 350 West Georgia St, Vancouver, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20Public%20Library%20Central%20Branch.jpg",
     "P": "入場免費，書籍 $2 起",
-    "U": "2026-08-28"
+    "U": "2026-08-28",
+    "Scope": "當週",
+    "SortDate": "2026-08-29"
   },
   {
     "T": "Car Free Day – Main Street 封街派對",
@@ -1922,7 +2103,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Main Street, Vancouver, BC（確切封街範圍以官網地圖為準）",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/2414%20Main%20Street%20Vancouver.JPG",
     "P": "免費",
-    "U": "2026-08-28"
+    "U": "2026-08-28",
+    "Scope": "未來",
+    "SortDate": "2026-09-13"
   },
   {
     "T": "Vancouver 國際佛朗明哥藝術節 – Granville Island 免費戶外場",
@@ -1940,7 +2123,9 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Fringe Patio, Ocean Artworks, 1398 Cartwright St, Granville Island, Vancouver, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville_Island_Vancouver_01.JPG",
     "P": "免費",
-    "U": "2026-08-28"
+    "U": "2026-08-28",
+    "Scope": "未來",
+    "SortDate": "2026-09-19"
   },
   {
     "T": "Richmond Culture Days 開幕週末 – 免費藝文體驗",
@@ -1958,14 +2143,56 @@ window.addEventListener("DOMContentLoaded", function () {
     "Map": "Richmond Cultural Centre & Annex, 7700 & 7660 Minoru Gate, Richmond, BC",
     "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Statues%20in%20front%20of%20the%20Cannery%20(6865002524).jpg",
     "P": "免費",
-    "U": "2026-08-28"
+    "U": "2026-08-28",
+    "Scope": "未來",
+    "SortDate": "2026-09-20"
+  },
+  {
+    "T": "Guns N' Roses 世界巡演 – BC Place",
+    "M": "weekend",
+    "C": "音樂",
+    "R": "Downtown",
+    "Tr": "大眾運輸",
+    "W": "室內",
+    "F": "傳奇搖滾樂團 Guns N' Roses 2026 世界巡演溫哥華站，The Black Crowes 開場，BC Place 室內大型演唱會，是本週末市中心最大牌的音樂活動。",
+    "IT": "搭 SkyTrain 到 Stadium–Chinatown 站步行 5 分鐘到 BC Place → 6:25pm 開演前先在場外找餐車墊胃 → 演出結束後跟著人潮步行回站避開叫車尖峰",
+    "N": "需持票入場，建議上 Ticketmaster 官網查詢當前釋出票源；場館周邊當晚交通壅塞，建議搭大眾運輸。",
+    "Dt": "2026/8/29（六）6:25pm",
+    "S": "Ticketmaster / Daily Hive",
+    "L": "https://www.ticketmaster.ca/guns-n-roses-world-tour-2026-vancouver-british-columbia-08-29-2026/event/11006374CC4FA42F",
+    "Map": "BC Place, 777 Pacific Blvd, Vancouver, BC",
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Vancouver%20BC.JPG",
+    "P": "依 Ticketmaster 票價浮動",
+    "Scope": "當週",
+    "SortDate": "2026-08-29",
+    "U": "2026-08-29"
+  },
+  {
+    "T": "Kimchi & K-Food Festival – Coquitlam 韓式泡菜美食節",
+    "M": "weekend",
+    "C": "美食",
+    "R": "Others",
+    "Tr": "建議開車",
+    "W": "戶外",
+    "F": "加拿大最大韓式泡菜與韓食節，Town Centre Park 有 114 個攤位、8 種體驗活動，包含泡菜製作、魷魚遊戲主題關卡與 K-pop 舞蹈比賽，去年吸引超過 8 萬人。今天是最後一天。",
+    "IT": "開車或搭公車到 Coquitlam Town Centre Park → 中午開始逛攤位試吃 → 傍晚看 K-pop 舞蹈比賽表演收尾",
+    "N": "免費入場，現場接受自由捐款；活動至今日（8/29）晚上 9 點結束，是本季最後一天。",
+    "Dt": "2026/8/28-8/29，11am-9pm",
+    "S": "Daily Hive",
+    "L": "https://dailyhive.com/vancouver/kimchi-festival-coquitlam",
+    "Map": "Town Centre Park, 1299 Pinetree Way, Coquitlam, BC V3B 7S4",
+    "I": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Vancouver%2C%20Canada.jpg",
+    "P": "免費（自由捐款）",
+    "Scope": "當週",
+    "SortDate": "2026-08-29",
+    "U": "2026-08-29"
   }
 ];
 
   var CAT_EMO = {"逛街":"🛍","音樂":"🎵","美食":"🍽","活動":"🎪","游泳":"🏊","美景":"🌇","水上活動":"🛶","Bar":"🍸","Clubbing":"🪩","新潮體驗":"✨"};
 
   var curMode = "all";
-  var curF = { region: "all", cat: "all", transit: "all", weather: "all" };
+  var curF = { region: "all", cat: "all", transit: "all", weather: "all", scope: "all" };
 
   function buildCard(d) {
     var card = document.createElement("div");
@@ -1975,6 +2202,7 @@ window.addEventListener("DOMContentLoaded", function () {
     card.dataset.region = d.R || "";
     card.dataset.transit = d.Tr || "";
     card.dataset.weather = d.W || "";
+    card.dataset.scope = d.Scope || "";
 
     var ci = document.createElement("div");
     ci.className = "ci";
@@ -2029,6 +2257,21 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var cm = document.createElement("div");
     cm.className = "cm";
+    if (d.Scope) {
+      var scopeMeta = { "當週": ["scope-week", "🔥 本週"], "未來": ["scope-future", null], "長期": ["scope-long", "🔁 長期活動"] };
+      var meta = scopeMeta[d.Scope];
+      if (meta) {
+        var sTag = document.createElement("span");
+        sTag.className = "scope-tag " + meta[0];
+        var label = meta[1];
+        if (!label && d.SortDate && d.SortDate !== "9999-12-31") {
+          var sp = d.SortDate.split("-");
+          label = "📅 " + parseInt(sp[1], 10) + "/" + parseInt(sp[2], 10) + " 登場";
+        }
+        sTag.textContent = label || "📅";
+        cm.appendChild(sTag);
+      }
+    }
     var cr = document.createElement("span");
     cr.className = "cr";
     cr.textContent = d.R || "";
@@ -2138,12 +2381,12 @@ window.addEventListener("DOMContentLoaded", function () {
     return card;
   }
 
-  // Sort: 最新更新優先 → 多家媒體推薦 → 每週固定 → 原本的新到舊
+  // Sort: 活動日期由近到遠（SortDate 升冪）→ 長期活動（9999-12-31）排最後 → 同日期則多家推薦優先 → 每週固定優先 → 原本順序
   DATA.reverse();
   DATA.forEach(function (d, i) { d._i = i; });
   DATA.sort(function (a, b) {
-    var au = a.U || "", bu = b.U || "";
-    if (au !== bu) return bu.localeCompare(au);
+    var ad = a.SortDate || "9999-12-31", bd = b.SortDate || "9999-12-31";
+    if (ad !== bd) return ad < bd ? -1 : 1;
     var ah = a.Hot ? 1 : 0, bh = b.Hot ? 1 : 0;
     if (ah !== bh) return bh - ah;
     var aw = a.Weekly ? 1 : 0, bw = b.Weekly ? 1 : 0;
@@ -2185,7 +2428,8 @@ window.addEventListener("DOMContentLoaded", function () {
         && (curF.region === "all" || c.dataset.region === curF.region)
         && (curF.cat === "all" || c.dataset.cat === curF.cat)
         && (curF.transit === "all" || c.dataset.transit === curF.transit)
-        && (curF.weather === "all" || c.dataset.weather === curF.weather);
+        && (curF.weather === "all" || c.dataset.weather === curF.weather)
+        && (curF.scope === "all" || c.dataset.scope === curF.scope);
       c.classList.toggle("hidden", !ok);
       if (ok) cnt++;
     });
